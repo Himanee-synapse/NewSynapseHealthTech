@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0F0E0B;--bg2:#161410;--bg3:#1D1A14;--faint:#252219;
+  --fg:#EFEBE2;--sub:#706960;
+  --a:#BEFC42;--a-dim:rgba(190,252,66,0.10);
+  --ln:rgba(239,235,226,.07);--lnh:rgba(239,235,226,.14);
+  --font-serif:'DM Serif Display',serif;
+  --font-mono:'Chivo Mono',monospace;
+  --font-sans:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--fg);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* ─ GUIDE LAYOUT ─ */
+.sg-header{padding:5rem 5% 4rem;border-bottom:1px solid var(--ln);background:var(--bg2)}
+.sg-logo{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.sg-logo img{height:40px;mix-blend-mode:screen}
+.sg-title{font-family:var(--font-serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:1;margin-bottom:1rem}
+.sg-title em{font-style:italic;color:var(--a)}
+.sg-subtitle{font-family:var(--font-mono);font-size:.72rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--sub)}
+.sg-nav{position:sticky;top:0;z-index:100;background:rgba(22,20,16,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--ln);padding:.8rem 5%;display:flex;gap:2.5rem;overflow-x:auto}
+.sg-nav a{font-family:var(--font-mono);font-size:.63rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);white-space:nowrap;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+.sg-nav a:hover{color:var(--fg);border-color:var(--a)}
+
+.sg-section{padding:5rem 5%;border-bottom:1px solid var(--ln)}
+.sg-section:nth-child(even){background:var(--bg2)}
+.sg-sec-label{font-family:var(--font-mono);font-size:.65rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--a);margin-bottom:.7rem}
+.sg-sec-title{font-family:var(--font-serif);font-size:2.2rem;font-weight:400;margin-bottom:.5rem}
+.sg-sec-desc{font-size:.88rem;font-weight:300;color:var(--sub);line-height:1.7;max-width:640px;margin-bottom:3.5rem}
+.sg-inner{max-width:1280px;margin:0 auto}
+.sg-rule{border:none;height:1px;background:var(--ln);margin:2.5rem 0}
+
+/* ─ COLOR SWATCHES ─ */
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}
+.swatch{border:1px solid var(--ln)}
+.swatch-block{height:80px}
+.swatch-info{padding:.9rem 1rem;background:var(--faint)}
+.swatch-name{font-family:var(--font-mono);font-size:.72rem;font-weight:400;color:var(--fg);display:block;margin-bottom:.25rem}
+.swatch-hex{font-family:var(--font-mono);font-size:.62rem;font-weight:300;color:var(--sub)}
+.swatch-role{font-family:var(--font-mono);font-size:.58rem;font-weight:300;color:var(--sub);letter-spacing:.06em;text-transform:uppercase;margin-top:.3rem;display:block;opacity:.7}
+
+/* ─ TYPE SCALE ─ */
+.type-rows{display:flex;flex-direction:column;gap:0}
+.type-row{display:grid;grid-template-columns:140px 1fr;align-items:baseline;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--ln)}
+.type-row:first-child{border-top:1px solid var(--ln)}
+.type-meta{font-family:var(--font-mono);font-size:.62rem;font-weight:300;color:var(--sub);letter-spacing:.06em;line-height:1.7}
+.type-meta strong{color:var(--fg);display:block;font-weight:400;margin-bottom:.3rem}
+
+/* ─ SPACING ─ */
+.spacing-rows{display:flex;flex-direction:column;gap:.8rem}
+.sp-row{display:grid;grid-template-columns:120px 60px 1fr;align-items:center;gap:1.5rem}
+.sp-label{font-family:var(--font-mono);font-size:.65rem;color:var(--sub)}
+.sp-val{font-family:var(--font-mono);font-size:.65rem;color:var(--a)}
+.sp-bar{background:var(--a);height:6px;border-radius:1px}
+
+/* ─ COMPONENT DEMOS ─ */
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.comp-box{background:var(--faint);border:1px solid var(--ln);padding:2rem}
+.comp-box-label{font-family:var(--font-mono);font-size:.62rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-bottom:1.5rem}
+
+/* Demo: section label */
+.demo-sl{font-family:var(--font-mono);font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);display:flex;align-items:center;gap:1rem}
+.demo-sl::after{content:'';flex:1;height:1px;background:var(--ln)}
+
+/* Demo: accordion row */
+.demo-acc-row{border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.demo-acc-head{display:grid;grid-template-columns:4rem 1fr auto;align-items:center;padding:1.2rem 0}
+.demo-acc-num{font-family:var(--font-mono);font-size:.65rem;color:var(--sub)}
+.demo-acc-name{font-family:var(--font-serif);font-size:1.3rem}
+.demo-acc-tog{color:var(--a);font-size:1rem}
+
+/* Demo: text link */
+.demo-tl{font-family:var(--font-mono);font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--fg);display:inline-flex;align-items:center;gap:.6rem}
+.demo-tl:hover{color:var(--a)}
+
+/* Demo: cert pill */
+.demo-cert{font-family:var(--font-mono);font-size:.67rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);padding:.6rem 1.1rem;border:1px solid var(--ln);display:inline-block}
+
+/* Demo: KPI */
+.demo-kpi{display:flex;flex-direction:column;gap:.3rem}
+.demo-kpi-n{font-family:var(--font-serif);font-size:4rem;font-weight:400;color:var(--a);line-height:1}
+.demo-kpi-l{font-family:var(--font-mono);font-size:.63rem;font-weight:300;text-transform:uppercase;letter-spacing:.1em;color:var(--sub)}
+
+/* Demo: eyebrow label (hero) */
+.demo-label{font-family:var(--font-mono);font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);display:flex;align-items:center;gap:.9rem;margin-bottom:.8rem}
+.demo-label::before{content:'';width:20px;height:1px;background:var(--a)}
+
+/* Demo: quote block */
+.demo-quote{font-family:var(--font-serif);font-size:1.15rem;font-style:italic;line-height:1.6;color:rgba(239,235,226,.7);padding-left:1.5rem;border-left:2px solid var(--a)}
+
+/* Demo: nav items */
+.demo-nav{display:flex;gap:1.8rem}
+.demo-nav a{font-family:var(--font-mono);font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub)}
+.demo-nav a.act{color:var(--fg)}
+
+/* Demo: form fields */
+.demo-field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+.demo-field label{font-family:var(--font-mono);font-size:.63rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+.demo-field input{background:var(--faint);border:1px solid var(--ln);color:var(--fg);font-family:var(--font-sans);font-size:.9rem;font-weight:300;padding:.8rem 1rem;outline:none;width:100%}
+.demo-field input:focus{border-color:rgba(190,252,66,.4)}
+.demo-btn{background:var(--a);border:none;color:#0F0E0B;font-family:var(--font-mono);font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:1rem 2rem;width:100%}
+
+/* ─ ANIMATION DOCS ─ */
+.anim-table{width:100%;border-collapse:collapse}
+.anim-table th{font-family:var(--font-mono);font-size:.63rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);text-align:left;padding:.8rem 1.2rem;border-bottom:1px solid var(--ln)}
+.anim-table td{font-family:var(--font-mono);font-size:.7rem;font-weight:300;color:var(--fg);padding:.9rem 1.2rem;border-bottom:1px solid var(--ln);vertical-align:top;line-height:1.6}
+.anim-table td:first-child{color:var(--a)}
+.anim-table tr:last-child td{border-bottom:none}
+
+/* ─ FILE MAP ─ */
+.file-tree{font-family:var(--font-mono);font-size:.75rem;font-weight:300;color:var(--sub);line-height:2;background:var(--faint);border:1px solid var(--ln);padding:2rem}
+.file-tree .dir{color:var(--fg);font-weight:400}
+.file-tree .accent{color:var(--a)}
+.file-tree .comment{color:rgba(112,105,96,.6);font-size:.65rem}
+
+/* ─ ICON: FONT USAGE ─ */
+.font-card{background:var(--faint);border:1px solid var(--ln);padding:1.8rem}
+.font-card-name{font-family:var(--font-mono);font-size:.63rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:.8rem}
+.font-card-sample{margin-bottom:.5rem}
+.font-card-meta{font-family:var(--font-mono);font-size:.6rem;font-weight:300;color:var(--sub);line-height:1.8}
+
+/* ─ GRADIENT DOC ─ */
+.grad-demo{height:140px;border:1px solid var(--ln);position:relative;overflow:hidden;margin-bottom:1rem}
+.grad-demo-inner{position:absolute;inset:0;background:radial-gradient(ellipse 65% 50% at 38% 62%,rgba(190,252,66,0.028) 0%,transparent 70%)}
+.grad-label{font-family:var(--font-mono);font-size:.62rem;color:var(--sub);line-height:1.7}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="sg-header">
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="sg-logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech"></div>
+    <div class="sg-sec-label">Design System · v1.0.0</div>
+    <h1 class="sg-title">Visual Design <em>System</em></h1>
+    <p class="sg-subtitle">Tokens · Typography · Components · Animation · File Map</p>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="sg-nav">
+  <a href="#colors">Colour Tokens</a>
+  <a href="#typography">Typography</a>
+  <a href="#spacing">Spacing</a>
+  <a href="#components">Components</a>
+  <a href="#animation">Animation</a>
+  <a href="#fonts">Fonts</a>
+  <a href="#gradients">Gradients</a>
+  <a href="#filemap">File Map</a>
+  <a href="#dependencies">Dependencies</a>
+</nav>
+
+
+<!-- ── COLOURS ───────────────────────────────────────────── -->
+<section class="sg-section" id="colors">
+  <div class="sg-inner">
+    <div class="sg-sec-label">01</div>
+    <h2 class="sg-sec-title">Colour Tokens</h2>
+    <p class="sg-sec-desc">All colours are defined as CSS custom properties on <code style="font-family:var(--font-mono);color:var(--a)">:root</code> in <code style="font-family:var(--font-mono);color:var(--a)">assets/synapse.css</code>. Never use raw hex values in new code — always reference the token.</p>
+
+    <p style="font-family:var(--font-mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:1.2rem">Backgrounds</p>
+    <div class="swatches" style="margin-bottom:2.5rem">
+      <div class="swatch"><div class="swatch-block" style="background:#0F0E0B"></div><div class="swatch-info"><span class="swatch-name">--bg</span><span class="swatch-hex">#0F0E0B</span><span class="swatch-role">Page background</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#161410"></div><div class="swatch-info"><span class="swatch-name">--bg2</span><span class="swatch-hex">#161410</span><span class="swatch-role">Alternate sections</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#1D1A14"></div><div class="swatch-info"><span class="swatch-name">--bg3</span><span class="swatch-hex">#1D1A14</span><span class="swatch-role">Tertiary / quotes</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#252219"></div><div class="swatch-info"><span class="swatch-name">--faint</span><span class="swatch-hex">#252219</span><span class="swatch-role">Cards / inset blocks</span></div></div>
+    </div>
+
+    <p style="font-family:var(--font-mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:1.2rem">Foreground</p>
+    <div class="swatches" style="margin-bottom:2.5rem">
+      <div class="swatch"><div class="swatch-block" style="background:#EFEBE2"></div><div class="swatch-info"><span class="swatch-name">--fg</span><span class="swatch-hex">#EFEBE2</span><span class="swatch-role">Primary text</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:#706960"></div><div class="swatch-info"><span class="swatch-name">--sub</span><span class="swatch-hex">#706960</span><span class="swatch-role">Secondary / muted text</span></div></div>
+    </div>
+
+    <p style="font-family:var(--font-mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:1.2rem">Accent</p>
+    <div class="swatches" style="margin-bottom:2.5rem">
+      <div class="swatch"><div class="swatch-block" style="background:#BEFC42"></div><div class="swatch-info"><span class="swatch-name">--a</span><span class="swatch-hex">#BEFC42</span><span class="swatch-role">Primary accent — Acid Lime</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:rgba(190,252,66,0.10)"></div><div class="swatch-info"><span class="swatch-name">--a-dim</span><span class="swatch-hex">rgba(190,252,66,.10)</span><span class="swatch-role">Faint accent fill</span></div></div>
+    </div>
+
+    <p style="font-family:var(--font-mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:1.2rem">Lines & Borders</p>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-block" style="background:rgba(239,235,226,.07);border:1px solid #333"></div><div class="swatch-info"><span class="swatch-name">--ln</span><span class="swatch-hex">rgba(239,235,226,.07)</span><span class="swatch-role">Default rule / border</span></div></div>
+      <div class="swatch"><div class="swatch-block" style="background:rgba(239,235,226,.14);border:1px solid #333"></div><div class="swatch-info"><span class="swatch-name">--lnh</span><span class="swatch-hex">rgba(239,235,226,.14)</span><span class="swatch-role">Hover rule / border</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── TYPOGRAPHY ─────────────────────────────────────────── -->
+<section class="sg-section" id="typography">
+  <div class="sg-inner">
+    <div class="sg-sec-label">02</div>
+    <h2 class="sg-sec-title">Typography Scale</h2>
+    <p class="sg-sec-desc">Three typefaces form the system. DM Serif Display for display and editorial text, Chivo Mono for all labels, data, and UI strings, DM Sans for body and functional copy.</p>
+
+    <div class="type-rows">
+      <div class="type-row">
+        <div class="type-meta"><strong>Hero Display</strong>DM Serif Display<br>clamp(3rem,7vw,7rem)<br>weight 400 · ls -0.02em</div>
+        <div style="font-family:var(--font-serif);font-size:clamp(2rem,5vw,5rem);font-weight:400;line-height:.95;letter-spacing:-.02em">Clinical AI</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Section H2</strong>DM Serif Display<br>clamp(2rem,3.2vw,2.8rem)<br>weight 400 · lh 1.2</div>
+        <div style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2">Expert counsel for<br>the intelligent hospital.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>H2 Italic Accent</strong>DM Serif Display<br>em tag → color: --a</div>
+        <div style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2">Four platforms. One intelligent <em style="font-style:italic;color:var(--a)">ecosystem.</em></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Pull Quote</strong>DM Serif Display<br>clamp(1.35rem,2.1vw,1.85rem)<br>font-style italic · lh 1.55</div>
+        <div style="font-family:var(--font-serif);font-size:clamp(1.1rem,1.8vw,1.4rem);font-weight:400;font-style:italic;line-height:1.55;color:rgba(239,235,226,.65)">"SynapseHealthTech didn't give us technology. They gave us clinical conviction."</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Body / Descriptive</strong>DM Sans<br>0.9–0.95rem<br>weight 300 · lh 1.75–1.8</div>
+        <div style="font-family:var(--font-sans);font-size:.92rem;font-weight:300;color:var(--sub);line-height:1.8">Enterprise AI across the full care continuum — diagnostics, care operations, pharmacovigilance, and data infrastructure. Deployed across 22 countries.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Section Label</strong>Chivo Mono<br>0.67rem · weight 300<br>ls 0.18em · uppercase</div>
+        <div class="demo-sl" style="max-width:400px">02 — Professional Services</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Nav / UI Labels</strong>Chivo Mono<br>0.66rem · weight 300<br>ls 0.1em · uppercase</div>
+        <div class="demo-nav"><a href="#" class="act">Services</a><a href="#">Products</a><a href="#">Industries</a><a href="#">Contact</a></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>KPI / Stat Number</strong>DM Serif Display<br>clamp(2.8rem,5vw,5rem)<br>weight 400 · lh 1 · color --a</div>
+        <div class="demo-kpi"><span class="demo-kpi-n">68%</span><span class="demo-kpi-l">Reduction in radiologist read time</span></div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta"><strong>Micro / Caption</strong>Chivo Mono<br>0.62–0.65rem · weight 300<br>ls 0.08–0.1em</div>
+        <div style="font-family:var(--font-mono);font-size:.63rem;font-weight:300;color:var(--sub);letter-spacing:.08em">Abu Dhabi · UAE · Hub71, Al Khatem Tower</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SPACING ─────────────────────────────────────────────── -->
+<section class="sg-section" id="spacing">
+  <div class="sg-inner">
+    <div class="sg-sec-label">03</div>
+    <h2 class="sg-sec-title">Spacing Scale</h2>
+    <p class="sg-sec-desc">Section padding is always <strong style="color:var(--fg)">7rem top/bottom</strong>. Hero pages use <strong style="color:var(--fg)">5rem bottom</strong>. Gaps between header and content within a section use <strong style="color:var(--fg)">5rem</strong>.</p>
+    <div class="spacing-rows">
+      <div class="sp-row"><span class="sp-label">--sp-xs · 0.5rem</span><span class="sp-val">0.5rem</span><div class="sp-bar" style="width:0.5rem;min-width:4px"></div></div>
+      <div class="sp-row"><span class="sp-label">--sp-sm · 1rem</span><span class="sp-val">1rem</span><div class="sp-bar" style="width:1rem"></div></div>
+      <div class="sp-row"><span class="sp-label">--sp-md · 2rem</span><span class="sp-val">2rem</span><div class="sp-bar" style="width:2rem"></div></div>
+      <div class="sp-row"><span class="sp-label">--sp-lg · 4rem</span><span class="sp-val">4rem</span><div class="sp-bar" style="width:4rem"></div></div>
+      <div class="sp-row"><span class="sp-label">--sp-xl · 7rem</span><span class="sp-val">7rem</span><div class="sp-bar" style="width:7rem"></div></div>
+      <div class="sp-row"><span class="sp-label">Section padding</span><span class="sp-val">7rem</span><div class="sp-bar" style="width:7rem"></div></div>
+      <div class="sp-row"><span class="sp-label">Max content width</span><span class="sp-val">1280px</span><div class="sp-bar" style="width:1280px;max-width:100%"></div></div>
+      <div class="sp-row"><span class="sp-label">Horizontal padding</span><span class="sp-val">5% (viewport)</span><div class="sp-bar" style="width:5%;min-width:20px"></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── COMPONENTS ─────────────────────────────────────────── -->
+<section class="sg-section" id="components">
+  <div class="sg-inner">
+    <div class="sg-sec-label">04</div>
+    <h2 class="sg-sec-title">Component Library</h2>
+    <p class="sg-sec-desc">All components are built in pure HTML/CSS/JS — no framework dependency. Copy the relevant CSS class from <code style="font-family:var(--font-mono);color:var(--a)">synapse.css</code>.</p>
+
+    <div class="comp-grid">
+      <div class="comp-box">
+        <div class="comp-box-label">Section Label (.sl)</div>
+        <div class="demo-sl">02 — Professional Services</div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Hero Eyebrow (.h-label)</div>
+        <div class="demo-label">01 — Health Intelligence Platform</div>
+        <div style="font-family:var(--font-sans);font-size:.88rem;font-weight:300;color:var(--sub);line-height:1.7">Enterprise AI across the full care continuum — diagnostics, care operations, pharmacovigilance.</div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Accordion Row (.sr)</div>
+        <div class="demo-acc-row">
+          <div class="demo-acc-head">
+            <span class="demo-acc-num">01</span>
+            <span class="demo-acc-name">AI Strategy &amp; Consulting</span>
+            <span class="demo-acc-tog">+</span>
+          </div>
+        </div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">KPI Block (.pkpi)</div>
+        <div class="demo-kpi">
+          <span class="demo-kpi-n">68%</span>
+          <span class="demo-kpi-l">Reduction in radiologist read time</span>
+        </div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Text Link (.tl)</div>
+        <div style="display:flex;flex-direction:column;gap:1rem">
+          <a href="#" class="demo-tl">Explore Platform ↗</a>
+          <a href="#" class="demo-tl">Case Studies ↗</a>
+        </div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Certification Pills (.cert)</div>
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem">
+          <span class="demo-cert">ISO 27001</span>
+          <span class="demo-cert">HIPAA</span>
+          <span class="demo-cert">FDA 510(k)</span>
+          <span class="demo-cert">CE Mark</span>
+          <span class="demo-cert">UAE DHA</span>
+        </div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Pull Quote</div>
+        <div class="demo-quote">"Our radiologists stopped fearing AI and started relying on it."</div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-label">Form Field + Submit Button</div>
+        <div class="demo-field">
+          <label>Work Email</label>
+          <input type="email" placeholder="a.haddad@hospital.com">
+        </div>
+        <button class="demo-btn">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── ANIMATION ──────────────────────────────────────────── -->
+<section class="sg-section" id="animation">
+  <div class="sg-inner">
+    <div class="sg-sec-label">05</div>
+    <h2 class="sg-sec-title">Animation System</h2>
+    <p class="sg-sec-desc">All animations are CSS-driven. JS only handles trigger timing via IntersectionObserver. No animation library is required.</p>
+
+    <table class="anim-table">
+      <thead>
+        <tr><th>Name</th><th>Trigger</th><th>Spec</th><th>Usage</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>pageIn</td>
+          <td>On load</td>
+          <td>opacity 0→1 · 0.45s · delay 0.1s · ease</td>
+          <td>body opacity fade on every page load</td>
+        </tr>
+        <tr>
+          <td>hU (heroUp)</td>
+          <td>On load</td>
+          <td>translateY(108%)→0 · 0.95s · cubic-bezier(.16,1,.3,1)<br>Delays: line 1 = 0.3s · line 2 = 0.48s · line 3 = 0.64s</td>
+          <td>Hero headline lines slide up from masked overflow</td>
+        </tr>
+        <tr>
+          <td>.fade → .fade.on</td>
+          <td>IntersectionObserver (threshold 0.1)</td>
+          <td>opacity 0→1 + translateY(22px)→0 · 0.8s · ease</td>
+          <td>All scroll-revealed sections. Add .d1–.d4 for stagger.</td>
+        </tr>
+        <tr>
+          <td>Accordion open</td>
+          <td>Click</td>
+          <td>max-height 0→220px · 0.55s · cubic-bezier(.16,1,.3,1)</td>
+          <td>Services rows. Products rows use 0→340px at 0.6s.</td>
+        </tr>
+        <tr>
+          <td>Product line reveal</td>
+          <td>:hover / .open</td>
+          <td>width 0→100% on ::before · 0.5s · cubic-bezier(.16,1,.3,1)</td>
+          <td>Top border accent on each product accordion row</td>
+        </tr>
+        <tr>
+          <td>Num bars</td>
+          <td>IntersectionObserver (threshold 0.3)</td>
+          <td>scaleX(0)→scaleX(1) · 0.6s · cubic-bezier(.16,1,.3,1)<br>Staggered: each bar delayed by i × 120ms</td>
+          <td>Stats section accent bars left of each number</td>
+        </tr>
+        <tr>
+          <td>Cursor dot expand</td>
+          <td>mouseenter on interactive elements</td>
+          <td>width/height 8px→30px · 0.2s</td>
+          <td>#dot element. mix-blend-mode: exclusion creates invert effect</td>
+        </tr>
+        <tr>
+          <td>h-foot</td>
+          <td>On load</td>
+          <td>opacity 0→1 · 0.8s · delay 1.1s · ease</td>
+          <td>Hero bottom bar fades in after headline animation completes</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ── FONTS ──────────────────────────────────────────────── -->
+<section class="sg-section" id="fonts">
+  <div class="sg-inner">
+    <div class="sg-sec-label">06</div>
+    <h2 class="sg-sec-title">Typefaces</h2>
+    <p class="sg-sec-desc">All fonts load via Google Fonts. The link tag below must appear in every page's <code style="font-family:var(--font-mono);color:var(--a)">&lt;head&gt;</code> before any CSS.</p>
+
+    <div style="background:var(--faint);border:1px solid var(--ln);padding:1.5rem 2rem;margin-bottom:2.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--sub);line-height:1.8">
+      <span style="color:rgba(190,252,66,.5)">&lt;!-- Google Fonts — place before CSS --&gt;</span><br>
+      <span style="color:var(--sub)">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</span><br>
+      <span style="color:var(--fg)">&lt;link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Chivo+Mono:wght@300;400&amp;family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&amp;display=swap" rel="stylesheet"&gt;</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem">
+      <div class="font-card">
+        <div class="font-card-name">Display / Editorial</div>
+        <div class="font-card-sample" style="font-family:var(--font-serif);font-size:2.2rem;font-weight:400;line-height:1.1">DM Serif Display</div>
+        <div class="font-card-sample" style="font-family:var(--font-serif);font-size:1.4rem;font-style:italic;color:var(--a)">Italic Variant</div>
+        <div class="font-card-meta">Google Fonts · DM Serif Display<br>Weights: 400 (regular + italic)<br>Usage: h1, h2, h3, KPIs, quotes, product names</div>
+      </div>
+      <div class="font-card">
+        <div class="font-card-name">Monospace / UI</div>
+        <div class="font-card-sample" style="font-family:var(--font-mono);font-size:1.4rem;font-weight:300">Chivo Mono</div>
+        <div class="font-card-sample" style="font-family:var(--font-mono);font-size:1rem;font-weight:400;color:var(--a)">400 Weight</div>
+        <div class="font-card-meta">Google Fonts · Chivo Mono<br>Weights: 300, 400<br>Usage: nav, labels, tags, captions, data, certs</div>
+      </div>
+      <div class="font-card">
+        <div class="font-card-name">Body / Functional</div>
+        <div class="font-card-sample" style="font-family:var(--font-sans);font-size:1.4rem;font-weight:300">DM Sans</div>
+        <div class="font-card-sample" style="font-family:var(--font-sans);font-size:1rem;font-weight:400;color:var(--a)">400 Weight</div>
+        <div class="font-card-meta">Google Fonts · DM Sans<br>Weights: 300, 400, 500 (opsz 9–40)<br>Usage: body paragraphs, form fields, descriptions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── GRADIENTS ──────────────────────────────────────────── -->
+<section class="sg-section" id="gradients">
+  <div class="sg-inner">
+    <div class="sg-sec-label">07</div>
+    <h2 class="sg-sec-title">Ambient Gradients</h2>
+    <p class="sg-sec-desc">Very low-opacity radial gradients in the accent colour create atmospheric depth without visual noise. The intent is subliminal — the viewer should feel warmth without identifying a gradient.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+      <div>
+        <div class="grad-demo"><div class="grad-demo-inner"></div></div>
+        <div class="grad-label"><strong style="color:var(--fg)">Hero / Page Ambient</strong><br>
+          radial-gradient(ellipse 65% 50% at 38% 62%,<br>
+          rgba(190, 252, 66, 0.028) 0%, transparent 70%)<br><br>
+          <span style="color:var(--sub)">Usage: hero sections, inner page heroes.<br>Position shifts per page for variety.</span>
+        </div>
+      </div>
+      <div>
+        <div class="grad-demo"><div class="grad-demo-inner" style="background:radial-gradient(ellipse 55% 45% at 65% 65%,rgba(190,252,66,0.028) 0%,transparent 70%)"></div></div>
+        <div class="grad-label"><strong style="color:var(--fg)">Variant — Right-biased</strong><br>
+          radial-gradient(ellipse 55% 45% at 65% 65%,<br>
+          rgba(190, 252, 66, 0.028) 0%, transparent 70%)<br><br>
+          <span style="color:var(--sub)">Usage: products page hero, alternate inner pages.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="sg-rule">
+    <p style="font-family:var(--font-mono);font-size:.65rem;font-weight:300;color:var(--sub);letter-spacing:.06em;line-height:1.8">
+      <strong style="color:var(--fg)">Ghost Watermark</strong> — Used in Connect and Careers CTA sections.<br>
+      Large serif text (clamp 8rem–18rem) at <strong style="color:var(--a)">rgba(239,235,226,0.022)</strong>. Position: absolute, bottom:-0.12em, right:-0.04em.<br>
+      pointer-events:none · user-select:none · overflow:hidden on parent.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── FILE MAP ───────────────────────────────────────────── -->
+<section class="sg-section" id="filemap">
+  <div class="sg-inner">
+    <div class="sg-sec-label">08</div>
+    <h2 class="sg-sec-title">File Map</h2>
+    <p class="sg-sec-desc">All pages are self-contained HTML files. The only external asset is the logo PNG. No build tools, bundlers, or frameworks are required to deploy.</p>
+
+    <div class="file-tree">
+      <span class="dir">synapse-website/</span><br>
+      │<br>
+      ├── <span class="accent">index.html</span>          <span class="comment">← Main landing page</span><br>
+      ├── <span class="accent">services.html</span>        <span class="comment">← Professional Services (4 sections)</span><br>
+      ├── <span class="accent">products.html</span>        <span class="comment">← Platform Suite (4 products)</span><br>
+      ├── <span class="accent">industries.html</span>      <span class="comment">← Industries We Serve (6 sectors)</span><br>
+      ├── <span class="accent">case-studies.html</span>    <span class="comment">← Client Impact (4 case studies + filter)</span><br>
+      ├── <span class="accent">careers.html</span>         <span class="comment">← Careers (About Us, values, 24 roles)</span><br>
+      ├── <span class="accent">contact.html</span>         <span class="comment">← Contact (split layout + form)</span><br>
+      │<br>
+      └── <span class="dir">assets/</span><br>
+          ├── <span class="accent">Logo_Hi_Res.png</span>    <span class="comment">← Brand logo (mix-blend-mode:screen removes bg)</span><br>
+          ├── <span class="accent">synapse.css</span>        <span class="comment">← Shared design system stylesheet</span><br>
+          └── <span class="accent">style-guide.html</span>   <span class="comment">← This file</span>
+    </div>
+
+    <hr class="sg-rule">
+
+    <p style="font-family:var(--font-mono);font-size:.65rem;font-weight:300;color:var(--sub);letter-spacing:.06em;line-height:2"><strong style="color:var(--fg)">Internal linking convention</strong><br>
+    All pages cross-link using relative paths (e.g. <span style="color:var(--a)">href="products.html"</span>).<br>
+    Active nav state: add class <span style="color:var(--a)">.act</span> to the current page's nav link.<br>
+    Logo src: <span style="color:var(--a)">assets/Logo_Hi_Res.png</span> — rendered with <span style="color:var(--a)">mix-blend-mode:screen</span> on dark backgrounds.
+    </p>
+  </div>
+</section>
+
+
+<!-- ── DEPENDENCIES ───────────────────────────────────────── -->
+<section class="sg-section" id="dependencies">
+  <div class="sg-inner">
+    <div class="sg-sec-label">09</div>
+    <h2 class="sg-sec-title">Dependencies</h2>
+    <p class="sg-sec-desc">The site has <strong style="color:var(--fg)">zero JavaScript dependencies</strong> and <strong style="color:var(--fg)">zero CSS frameworks</strong>. The only external resources are Google Fonts (CDN) and the logo PNG.</p>
+
+    <table class="anim-table">
+      <thead>
+        <tr><th>Resource</th><th>Type</th><th>Source</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DM Serif Display</td>
+          <td>Font</td>
+          <td>fonts.googleapis.com</td>
+          <td>Weights: 400, 400 italic. ~22KB WOFF2.</td>
+        </tr>
+        <tr>
+          <td>Chivo Mono</td>
+          <td>Font</td>
+          <td>fonts.googleapis.com</td>
+          <td>Weights: 300, 400. ~18KB WOFF2.</td>
+        </tr>
+        <tr>
+          <td>DM Sans</td>
+          <td>Font</td>
+          <td>fonts.googleapis.com</td>
+          <td>Weights: 300, 400, 500 (variable). ~24KB WOFF2.</td>
+        </tr>
+        <tr>
+          <td>Logo_Hi_Res.png</td>
+          <td>Image</td>
+          <td>Local (assets/)</td>
+          <td>Must sit in assets/ folder relative to HTML files. Used with mix-blend-mode:screen.</td>
+        </tr>
+        <tr>
+          <td>Google Fonts preconnect</td>
+          <td>Network hint</td>
+          <td>fonts.googleapis.com + fonts.gstatic.com</td>
+          <td>Add rel="preconnect" link tags before the font href for performance.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="sg-rule">
+
+    <p style="font-family:var(--font-mono);font-size:.65rem;font-weight:300;color:var(--sub);letter-spacing:.06em;line-height:2">
+      <strong style="color:var(--fg)">Browser support</strong> — All modern browsers (Chrome 88+, Firefox 85+, Safari 14+, Edge 88+).<br>
+      Features used: CSS custom properties, CSS Grid, IntersectionObserver, backdrop-filter, mix-blend-mode, clamp().<br><br>
+      <strong style="color:var(--fg)">Performance notes</strong><br>
+      All JS is inline and deferred by placement at end of &lt;body&gt;. No external scripts.<br>
+      IntersectionObserver uses threshold 0.1 for reveal triggers (0.3 for number bars).<br>
+      Fit-text uses binary search on document.fonts.ready — requires fonts loaded before firing.<br><br>
+      <strong style="color:var(--fg)">Offline / self-hosted fonts</strong><br>
+      For intranet or air-gapped deployments, download fonts via <span style="color:var(--a)">google-webfonts-helper.herokuapp.com</span>,<br>
+      place WOFF2 files in assets/fonts/, and replace the Google Fonts &lt;link&gt; with local @font-face declarations.
+    </p>
+  </div>
+</section>
+
+<footer style="padding:3rem 5%;border-top:1px solid var(--ln);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+  <span style="font-family:var(--font-mono);font-size:.65rem;color:var(--sub)">SynapseHealthTech · Design System v1.0.0</span>
+  <span style="font-family:var(--font-mono);font-size:.65rem;color:var(--sub)">For developer handover only · Not a public page</span>
+</footer>
+
+</body>
+</html>

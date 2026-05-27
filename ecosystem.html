@@ -1,0 +1,239 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ecosystem — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#0F0E0B; --bg2:#161410; --bg3:#1D1A14; --faint:#252219;
+--fg:#EFEBE2; --sub:#706960; --a:#BEFC42; --a-dim:rgba(190,252,66,.10);
+--ln:rgba(239,235,226,.07); --lnh:rgba(239,235,226,.14);
+--font-serif:'DM Serif Display',serif; --font-mono:'Chivo Mono',monospace; --font-sans:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-sans);font-weight:300;overflow-x:hidden;line-height:1.6}
+ 
+/* TOPNAV */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 4%;background:rgba(15,14,11,.78);backdrop-filter:blur(20px);border-bottom:1px solid var(--ln)}
+.brand{display:flex;align-items:center;gap:.8rem;font-family:var(--font-serif);font-size:1.25rem;color:var(--fg);text-decoration:none}
+.brand em{color:var(--a);font-style:italic}
+.brand-mark{display:inline-flex;flex-direction:column;gap:3px}
+.brand-mark span{display:block;width:18px;height:3px;background:var(--a)}
+.brand-mark span:nth-child(2){width:14px}
+.brand-mark span:nth-child(3){width:10px}
+.topnav-links{display:flex;gap:2.5rem}
+.topnav-links a{font-family:var(--font-mono);font-size:.7rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s}
+.topnav-links a:hover,.topnav-links a.act{color:var(--fg)}
+.topnav-cta{padding:.6rem 1.4rem;background:var(--a);color:#0F0E0B;font-family:var(--font-mono);font-size:.66rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:opacity .2s}
+.topnav-cta:hover{opacity:.85}
+ 
+/* HERO */
+.hero{padding:9rem 4% 5rem;border-bottom:1px solid var(--ln);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 15% 30%,rgba(190,252,66,.04) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.7fr 1fr;gap:6rem;align-items:end;position:relative}
+.h-label{font-family:var(--font-mono);font-size:.7rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
+.h-label::before{content:'';width:24px;height:1px;background:var(--a)}
+.h-title{font-family:var(--font-serif);font-size:clamp(2.6rem,6vw,5.2rem);font-weight:400;line-height:.98;letter-spacing:-.02em;margin-bottom:2rem}
+.h-title em{font-style:italic;color:var(--a)}
+.h-desc{font-size:1rem;color:var(--sub);line-height:1.7;max-width:540px}
+.hero-meta{display:flex;flex-direction:column;gap:1rem;padding:1.5rem;border:1px solid var(--ln);background:var(--bg2)}
+.meta-row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.meta-row .k{font-family:var(--font-mono);font-size:.62rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+.meta-row .v{font-family:var(--font-mono);font-size:.78rem;color:var(--fg)}
+.meta-row .v em{font-family:var(--font-serif);font-style:italic;color:var(--a);font-size:.95rem}
+ 
+/* LAYERS */
+.layers{padding:5rem 4% 6rem;border-bottom:1px solid var(--ln)}
+.layers-inner{max-width:1280px;margin:0 auto}
+.sec-label{font-family:var(--font-mono);font-size:.7rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--sub);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.sec-label::before{content:'';width:24px;height:1px;background:var(--a)}
+.sec-title{font-family:var(--font-serif);font-size:clamp(2rem,4.5vw,3.4rem);font-weight:400;line-height:1;letter-spacing:-.015em;margin-bottom:1.5rem}
+.sec-title em{font-style:italic;color:var(--a)}
+.sec-desc{font-size:1rem;color:var(--sub);max-width:680px;margin-bottom:4rem;line-height:1.7}
+ 
+.layer-row{display:grid;grid-template-columns:.4fr 1.6fr 1.4fr .8fr;gap:2.5rem;align-items:start;padding:3rem 1.5rem;border-top:1px solid var(--ln);transition:background .3s ease,box-shadow .3s ease;cursor:default}
+.layer-row:last-child{border-bottom:1px solid var(--ln)}
+.layer-row:hover{background:rgba(190,252,66,.025);box-shadow:inset 0 0 0 1px rgba(190,252,66,.5)}
+.lr-num{font-family:var(--font-mono);font-size:.72rem;font-weight:300;letter-spacing:.18em;color:var(--sub);padding-top:.5rem}
+.lr-tag{font-family:var(--font-mono);font-size:.62rem;font-weight:300;letter-spacing:.16em;text-transform:uppercase;color:var(--a);display:inline-block;margin-bottom:1rem}
+.lr-name{font-family:var(--font-serif);font-size:2.3rem;font-weight:400;line-height:1;margin-bottom:1.2rem}
+.lr-name em{font-style:italic}
+.lr-desc{font-size:.95rem;color:var(--sub);line-height:1.7}
+.lr-features{display:flex;flex-direction:column;gap:.7rem;padding-top:.4rem}
+.lr-feat{font-family:var(--font-mono);font-size:.72rem;font-weight:300;letter-spacing:.04em;color:var(--fg);padding-left:1rem;position:relative;line-height:1.6}
+.lr-feat::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:1px;background:var(--a)}
+.lr-side{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;height:100%;gap:1.5rem}
+.lr-mini{text-align:right}
+.lr-mini-n{display:block;font-family:var(--font-serif);font-size:2.2rem;font-weight:400;color:var(--a);line-height:1;margin-bottom:.4rem}
+.lr-mini-l{font-family:var(--font-mono);font-size:.6rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.lr-link{font-family:var(--font-mono);font-size:.66rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--a);text-decoration:none;border-bottom:1px solid var(--a);padding-bottom:.2rem;transition:opacity .2s}
+.lr-link:hover{opacity:.7}
+ 
+/* CTA */
+.cta{padding:6rem 4%;background:var(--bg2);position:relative;overflow:hidden;border-bottom:1px solid var(--ln)}
+.cta-ghost{position:absolute;bottom:-3rem;right:-1rem;font-family:var(--font-serif);font-style:italic;font-size:14rem;color:var(--faint);line-height:.8;pointer-events:none;user-select:none}
+.cta-inner{max-width:1280px;margin:0 auto;position:relative}
+.cta-title{font-family:var(--font-serif);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;line-height:1;letter-spacing:-.015em;margin-bottom:2.5rem;max-width:780px}
+.cta-title em{font-style:italic;color:var(--a)}
+.cta-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;padding:1rem 2rem;background:var(--a);color:#0F0E0B;font-family:var(--font-mono);font-size:.72rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+.cta-btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--ln)}
+.cta-btn.ghost:hover{border-color:var(--a);color:var(--a);opacity:1}
+ 
+/* FOOTER */
+.page-foot{display:flex;justify-content:space-between;padding:1.8rem 4%;font-family:var(--font-mono);font-size:.65rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);flex-wrap:wrap;gap:1rem}
+.page-foot strong{color:var(--fg);font-weight:400}
+ 
+@media(max-width:880px){
+.topnav-links{display:none}
+.hero-inner{grid-template-columns:1fr;gap:2.5rem}
+.layer-row{grid-template-columns:1fr;gap:1.5rem}
+.lr-side{align-items:flex-start;flex-direction:row;justify-content:space-between;width:100%}
+.lr-mini{text-align:left}
+}
+</style>
+</head>
+<body>
+ 
+<nav class="topnav">
+<a href="#" class="brand">
+<span class="brand-mark"><span></span><span></span><span></span></span>
+Synapse<em>Health</em>
+</a>
+<div class="topnav-links">
+<a href="#">Platform</a>
+<a href="#" class="act">Ecosystem</a>
+<a href="#">Industries</a>
+<a href="case-studies.html">Case Studies</a>
+<a href="#">Resources</a>
+</div>
+<a href="#contact" class="topnav-cta">Get in Touch</a>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="h-label">The Ecosystem · 03 Layers</div>
+<h1 class="h-title">The trust layer for <em>clinical AI.</em></h1>
+<p class="h-desc">Three products. One promise. PrivaSure protects the data before it moves. HealthLLM Fabric lets you safely use any healthcare LLM. MarketPlace turns the cleared data into research and revenue. Adopt one, swap another, or run the whole stack — the seams are designed to disappear.</p>
+</div>
+<aside class="hero-meta">
+<div class="meta-row">
+<span class="k">Stack</span>
+<span class="v"><em>Three</em> layered products</span>
+</div>
+<div class="meta-row">
+<span class="k">Compliance</span>
+<span class="v">HIPAA · GDPR · FDA</span>
+</div>
+<div class="meta-row">
+<span class="k">Built for</span>
+<span class="v">Providers · Payers · Pharma</span>
+</div>
+</aside>
+</div>
+</section>
+ 
+<!-- LAYERS -->
+<section class="layers">
+<div class="layers-inner">
+<div class="sec-label">01 — The Stack</div>
+<h2 class="sec-title">Built to <em>compose.</em> Sold to ship.</h2>
+<p class="sec-desc">Each layer is a product in its own right — independently versioned, independently sold, and engineered to land inside your existing infrastructure without a rip-and-replace conversation.</p>
+ 
+<!-- Layer 3 -->
+<div class="layer-row">
+<div class="lr-num">03 / 03</div>
+<div class="lr-title-block">
+<span class="lr-tag">Monetization Layer</span>
+<h3 class="lr-name"><em>MarketPlace</em></h3>
+<p class="lr-desc">Where de-identified healthcare data turns into research and revenue. A secure exchange for buying, selling, and licensing privacy-cleared datasets — every listing PrivaSure-gated before it enters the catalog.</p>
+</div>
+<div class="lr-features">
+<span class="lr-feat">Fixed, subscription, custom, and usage-based pricing</span>
+<span class="lr-feat">Challenge Centre for crowdsourced AI research</span>
+<span class="lr-feat">Automated NDAs and signed seller consent flows</span>
+<span class="lr-feat">PrivaSure de-identification gate at ingestion</span>
+</div>
+<div class="lr-side">
+<div class="lr-mini">
+<span class="lr-mini-n">100+</span>
+<span class="lr-mini-l">Free datasets available</span>
+</div>
+</div>
+</div>
+ 
+<!-- Layer 2 -->
+<div class="layer-row">
+<div class="lr-num">02 / 03</div>
+<div class="lr-title-block">
+<span class="lr-tag">Reasoning Layer</span>
+<h3 class="lr-name"><em>HealthLLM Fabric</em></h3>
+<p class="lr-desc">The AI control plane that de-identifies PHI in real time as it leaves the EHR — so clinicians can use any healthcare LLM without ever exposing patient data. FHIR-aware retrieval, specialized models for billing and clinical workflows, and a per-inference audit trail for compliance and IRB.</p>
+</div>
+<div class="lr-features">
+<span class="lr-feat">Real-time PHI de-identification before any EHR data enters the platform</span>
+<span class="lr-feat">FHIR-aware retrieval over EHR, claims, and clinical documents</span>
+<span class="lr-feat">Per-inference audit ledger for compliance and IRB workflows</span>
+<span class="lr-feat">Specialized models — billing, clinical, RCM, operational — orchestrated as one</span>
+</div>
+<div class="lr-side">
+<div class="lr-mini">
+<span class="lr-mini-n">100%</span>
+<span class="lr-mini-l">Secure model access</span>
+</div>
+</div>
+</div>
+ 
+<!-- Layer 1 -->
+<div class="layer-row">
+<div class="lr-num">01 / 03</div>
+<div class="lr-title-block">
+<span class="lr-tag">Privacy &amp; Data Layer</span>
+<h3 class="lr-name"><em>PrivaSure</em></h3>
+<p class="lr-desc">The reason the rest of the stack is allowed in the building. Twelve de-identification techniques across Safe Harbor, Expert Determination, custom rules, and tokenisation — engineered to be the reference standard for healthcare data privacy, not just another compliance checkbox.</p>
+</div>
+<div class="lr-features">
+<span class="lr-feat">12 methods: 4 Safe Harbor, 4 Expert Determination, 3 Custom, 1 Tokenisation</span>
+<span class="lr-feat">Dual-token system — patient data never leaves your perimeter</span>
+<span class="lr-feat">Differential privacy and data linkage protection built in</span>
+<span class="lr-feat">RESTful API, RBAC, and per-dataset re-identification risk score</span>
+</div>
+<div class="lr-side">
+<div class="lr-mini">
+<span class="lr-mini-n">18+</span>
+<span class="lr-mini-l">PHI identifiers auto-detected</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+ 
+<!-- CTA -->
+<section class="cta" id="contact">
+<span class="cta-ghost">ecosystem.</span>
+<div class="cta-inner">
+<h2 class="cta-title">Pick a layer. Or take the whole <em>stack.</em></h2>
+<div class="cta-actions">
+<a href="#" class="cta-btn">Schedule a Technical Brief</a>
+<a href="Stacked Layers.html" class="cta-btn ghost">Back to Overview</a>
+</div>
+</div>
+</section>
+ 
+<footer class="page-foot">
+<span><strong>SynapseHealthTech</strong> · Ecosystem</span>
+<span>Abu Dhabi · UAE</span>
+<span>© 2026 · synapsehealthtech.com</span>
+</footer>
+ 
+</body>
+</html>

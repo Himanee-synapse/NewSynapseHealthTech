@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Real-world outcomes from SynapseHealthTech deployments — from post-discharge care management to revenue cycle automation across GCC and global health systems.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Case Studies — SynapseHealthTech">
+<meta property="og:description" content="Real-world outcomes from SynapseHealthTech deployments — from post-discharge care management to revenue cycle automation across GCC and global health systems.">
+<meta property="og:url" content="https://synapsehealthtech.com/case-studies/">
+<meta property="og:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<meta property="og:site_name" content="SynapseHealthTech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Case Studies — SynapseHealthTech">
+<meta name="twitter:description" content="Real-world outcomes from SynapseHealthTech deployments — from post-discharge care management to revenue cycle automation across GCC and global health systems.">
+<meta name="twitter:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<title>Case Studies — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0E0B;--bg2:#161410;--bg3:#1D1A14;--fg:#EFEBE2;--sub:#706960;--faint:#252219;--a:#BEFC42;--ln:rgba(239,235,226,.07);--lnh:rgba(239,235,226,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden;cursor:none;opacity:0;animation:pi .45s .1s ease forwards}
+@keyframes pi{to{opacity:1}}
+#dot{position:fixed;width:8px;height:8px;background:var(--a);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;transition:width .2s,height .2s}
+body.lh #dot{width:30px;height:30px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;transition:background .4s}
+nav.dim{background:rgba(15,14,11,.88);backdrop-filter:blur(16px)}
+.logo img{height:34px;mix-blend-mode:screen;display:block}
+.nl{display:flex;gap:2.2rem;list-style:none}
+.nl a{font-family:'Chivo Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s;cursor:none}
+.nl a:hover,.nl a.act{color:var(--fg)}
+.ct{max-width:1280px;margin:0 auto;padding:0 5%}
+.sl{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:3.5rem;display:flex;align-items:center;gap:1rem}
+.sl::after{content:'';flex:1;height:1px;background:var(--ln)}
+.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.fade.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+footer{padding:2.5rem 5%;border-top:1px solid var(--ln);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+.fl a{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;cursor:none;transition:color .2s}
+.fl a:hover{color:var(--fg)}
+.fc{font-family:'Chivo Mono',monospace;font-size:.62rem;color:var(--sub)}
+
+/* HERO */
+#phero{min-height:65vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5% 5rem;border-bottom:1px solid var(--ln);position:relative;overflow:hidden}
+.ph-amb{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 50% 70%,rgba(190,252,66,.028) 0%,transparent 70%)}
+.ph-pre{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.ph-pre::before{content:'';width:20px;height:1px;background:var(--a)}
+.ph-h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:400;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
+.ph-h1 em{font-style:italic;color:var(--a)}
+.ph-row{display:flex;gap:5rem;padding-top:2.5rem;border-top:1px solid var(--ln)}
+.ph-stat{border-right:1px solid var(--ln);padding-right:5rem}
+.ph-stat:last-child{border-right:none;padding-right:0}
+.ph-stat-n{font-family:'DM Serif Display',serif;font-size:2.8rem;font-weight:400;line-height:1;color:var(--a)}
+.ph-stat-l{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-top:.4rem}
+
+/* FILTER */
+#filter{padding:2.5rem 5%;background:var(--bg2);border-bottom:1px solid var(--ln)}
+.filter-i{max-width:1280px;margin:0 auto;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.filter-lbl{font-family:'Chivo Mono',monospace;font-size:.65rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-right:.5rem}
+.ftag{font-family:'Chivo Mono',monospace;font-size:.65rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);padding:.45rem 1rem;border:1px solid var(--ln);cursor:none;transition:border-color .2s,color .2s}
+.ftag:hover,.ftag.active{border-color:rgba(190,252,66,.4);color:var(--a)}
+
+/* CASE STUDIES LIST */
+#cases{padding:0 5%}
+.case-item{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;padding:5rem 0;border-bottom:1px solid var(--ln);cursor:none}
+.case-item:hover .case-name{color:var(--a)}
+.case-left{}
+.case-client{font-family:'Chivo Mono',monospace;font-size:.65rem;font-weight:300;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);margin-bottom:1.5rem}
+.case-metric{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:400;line-height:.95;color:var(--a);margin-bottom:.5rem}
+.case-metric-lab{font-family:'Chivo Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);line-height:1.6}
+.case-tags{display:flex;gap:.6rem;margin-top:2rem;flex-wrap:wrap}
+.case-tag{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);padding:.35rem .8rem;border:1px solid var(--ln)}
+.case-right{}
+.case-name{font-family:'DM Serif Display',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:400;margin-bottom:1.5rem;transition:color .25s}
+.case-q{font-family:'DM Serif Display',serif;font-size:clamp(1rem,1.6vw,1.25rem);font-weight:400;font-style:italic;color:rgba(239,235,226,.65);line-height:1.6;margin-bottom:2rem}
+.case-p{font-size:.9rem;font-weight:300;color:var(--sub);line-height:1.75;margin-bottom:2rem}
+.case-results{display:flex;gap:2.5rem}
+.cr{border-right:1px solid var(--ln);padding-right:2.5rem}
+.cr:last-child{border-right:none;padding-right:0}
+.cr-n{font-family:'DM Serif Display',serif;font-size:1.6rem;font-weight:400;color:var(--fg);line-height:1;margin-bottom:.3rem}
+.cr-l{font-family:'Chivo Mono',monospace;font-size:.6rem;font-weight:300;letter-spacing:.08em;color:var(--sub)}
+
+
+/* ─ FOOTER STRUCTURE ─ */
+footer{border-top:1px solid var(--ln);padding:0 5%}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0;flex-wrap:wrap}
+.fc{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.fc-link{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s}
+.fc-link:hover{color:var(--fg)}
+/* ─ SOCIAL ICONS — uniform 32×32 circles, right-anchored ─ */
+.footer-social{display:flex;align-items:center;gap:1rem;margin-left:auto;flex-shrink:0}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;color:var(--sub);border:1px solid var(--ln);border-radius:50%;text-decoration:none;flex-shrink:0;transition:color .22s,border-color .22s,background .22s;cursor:none}
+.footer-social a svg{width:14px;height:14px;display:block}
+.footer-social a:hover{color:var(--a);border-color:var(--a);background:rgba(190,252,66,.06)}
+/* ─ CTA BUTTONS ─ */
+.btn-filled{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:var(--a);color:#0F0E0B;font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--a);cursor:none;transition:background .2s,color .2s;white-space:nowrap}
+.btn-filled:hover{background:transparent;color:var(--a)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:transparent;color:var(--fg);font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ln);cursor:none;transition:border-color .2s,color .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--a);color:var(--a)}
+</style>
+<link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/additions.css">
+</head>
+<body>
+<div id="dot"></div>
+<nav id="nav">
+  <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech" width="auto" height="34" loading="eager"></a>
+  <ul class="nl"><li><a href="services.html">Services</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="ecosystemlayer.html">Stacked Layers</a></li><li class="nl-drop"><a href="products.html">Products</a><div class="nl-menu"><a href="privasure.html" class="nl-menu-item"><span class="nl-menu-item-n">PrivaSure</span><span class="nl-menu-item-t">Healthcare Data Privacy</span></a><a href="dental.html" class="nl-menu-item"><span class="nl-menu-item-n">Dental PanoAI</span><span class="nl-menu-item-t">Dental Radiology AI</span></a><a href="pdcm.html" class="nl-menu-item"><span class="nl-menu-item-n">PDCM</span><span class="nl-menu-item-t">Post-Discharge Care Management</span></a><a href="agentic-rcm.html" class="nl-menu-item"><span class="nl-menu-item-n">Agentic RCM</span><span class="nl-menu-item-t">Revenue Cycle Automation</span></a></div></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html"class="act">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-demo">Book a Demo</a>
+  <button id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="phero">
+  <div class="ph-amb"></div>
+  <div class="ph-pre">Client Impact</div>
+  <h1 class="ph-h1">Outcomes that<br>define the <em>benchmark.</em></h1>
+  <div class="ph-row">
+    <div class="ph-stat"><div class="ph-stat-n">140+</div><div class="ph-stat-l">Deployments worldwide</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">22</div><div class="ph-stat-l">Countries</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">$840M</div><div class="ph-stat-l">Documented client savings</div></div>
+    <div class="ph-stat"><div class="ph-stat-n">98.4%</div><div class="ph-stat-l">Client renewal rate</div></div>
+  </div>
+</section>
+
+<div class="sticky-subnav">
+  <div class="sticky-subnav-inner">
+    <a href="#" class="ssn-link active" onclick="setFilter('all');return false">All Cases</a>
+    <a href="#" class="ssn-link" onclick="setFilter('pdcm');return false">PDCM</a>
+    <a href="#" class="ssn-link" onclick="setFilter('dental');return false">Dental PanoAI</a>
+    <a href="#" class="ssn-link" onclick="setFilter('agentic-rcm');return false">Agentic RCM</a>
+    <a href="#" class="ssn-link" onclick="setFilter('privasure');return false">PrivaSure</a>
+  </div>
+</div>
+<section id="filter">
+  <div class="filter-i">
+    <span class="filter-lbl">Filter by</span>
+    <div class="ftag active" data-filter="all">All Cases</div>
+    <div class="ftag" data-filter="privasure">PrivaSure</div>
+    <div class="ftag" data-filter="dental">Dental PanoAI</div>
+    <div class="ftag" data-filter="pdcm">PDCM</div>
+    <div class="ftag" data-filter="agentic-rcm">Agentic RCM</div>
+    <div class="ftag" data-filter="hospital">Hospitals</div>
+    <div class="ftag" data-filter="pharma">Pharma</div>
+  </div>
+</section>
+
+<section id="cases">
+  
+  <div class="case-item fade" data-tags="pdcm hospital">
+    <div class="case-left">
+      <div class="case-client">Rashid Medical Centre<br>Dubai, UAE</div>
+      <div class="case-metric">43%</div>
+      <div class="case-metric-lab">Reduction in 30-day<br>cardiac readmissions</div>
+      <div class="case-tags"><span class="case-tag">PDCM</span><span class="case-tag">Hospitals</span></div>
+    </div>
+    <div class="case-right">
+      <div class="case-name">PDCM: Transforming post-cardiac discharge at a high-volume Dubai tertiary centre</div>
+      <p class="case-q">"We used to see discharge as the end of our responsibility. PDCM changed that. Our cardiac readmission rate has fallen 43% in two quarters — and our patients feel genuinely supported between appointments."</p>
+      <p class="case-p">Rashid Medical Centre deployed PDCM across its cardiac surgery and interventional cardiology discharge cohort — approximately 340 patients per month. The platform monitors vital signs, medication adherence, and symptom escalation in real time. Care coordinators now manage 40% more patients per head, with the dashboard surfacing only those requiring active intervention. The 43% readmission reduction was measured against the preceding 12-month baseline for the same cohort.</p>
+      <div class="case-results">
+        <div class="cr"><div class="cr-n">43%</div><div class="cr-l">30-day readmission reduction</div></div>
+        <div class="cr"><div class="cr-n">340</div><div class="cr-l">Monthly discharge patients monitored</div></div>
+        <div class="cr"><div class="cr-n">40%</div><div class="cr-l">More patients per care coordinator</div></div>
+        <div class="cr"><div class="cr-n">8wk</div><div class="cr-l">Time to full deployment</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-item fade" data-tags="dental hospital">
+    <div class="case-left">
+      <div class="case-client">SEHA Dental Network<br>Abu Dhabi, UAE</div>
+      <div class="case-metric">89%</div>
+      <div class="case-metric-lab">Reduction in average<br>report turnaround time</div>
+      <div class="case-tags"><span class="case-tag">Dental PanoAI</span><span class="case-tag">Hospitals</span></div>
+    </div>
+    <div class="case-right">
+      <div class="case-name">Dental PanoAI: Same-appointment reporting across 18 SEHA dental facilities</div>
+      <p class="case-q">"Our reporting time went from same-day to same-appointment. The detection accuracy on early periapical lesions has improved our diagnosis rates in ways we did not anticipate — AI catches what fatigue misses."</p>
+      <p class="case-p">Abu Dhabi Health Services (SEHA) deployed Dental PanoAI across 18 dental clinics in the first phase, processing approximately 2,400 panoramic radiographs monthly. Report turnaround fell from an average of 4.2 hours to 28 seconds. Early periapical pathology detection improved by 22% against the pre-deployment baseline. The rollout — including PMS integration across all sites — was completed in 11 days.</p>
+      <div class="case-results">
+        <div class="cr"><div class="cr-n">89%</div><div class="cr-l">Report turnaround reduction</div></div>
+        <div class="cr"><div class="cr-n">22%</div><div class="cr-l">Periapical detection improvement</div></div>
+        <div class="cr"><div class="cr-n">2,400</div><div class="cr-l">Radiographs/month processed</div></div>
+        <div class="cr"><div class="cr-n">11d</div><div class="cr-l">Time to full 18-site rollout</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-item fade" data-tags="agentic-rcm hospital">
+    <div class="case-left">
+      <div class="case-client">Aster DM Healthcare<br>UAE &amp; India</div>
+      <div class="case-metric">AED 7.8M</div>
+      <div class="case-metric-lab">Denied claims recovered<br>in first six months</div>
+      <div class="case-tags"><span class="case-tag">Agentic RCM</span><span class="case-tag">Hospitals</span></div>
+    </div>
+    <div class="case-right">
+      <div class="case-name">Agentic RCM: Recovering denied revenue and eliminating manual prior auth across an 18-facility network</div>
+      <p class="case-q">"We recovered AED 7.8 million in previously written-off denials in six months. Our clean claims rate went from 71% to 96% in twelve weeks. The Prior Auth Agent alone freed four full-time staff positions."</p>
+      <p class="case-p">Aster DM Healthcare deployed Agentic RCM across 18 UAE facilities in a 10-week rollout. The five-agent pipeline automated patient intake, eligibility verification, prior authorisation, clinical documentation coding, and claim submission. Prior authorisation processing — previously the largest manual bottleneck — became 94% touchless. The Denial Management Agent recovered AED 7.8M in previously denied claims in the first six months, against an implementation cost recovered in under 4 months.</p>
+      <div class="case-results">
+        <div class="cr"><div class="cr-n">AED 7.8M</div><div class="cr-l">Denied claims recovered</div></div>
+        <div class="cr"><div class="cr-n">96%</div><div class="cr-l">Clean claims rate achieved</div></div>
+        <div class="cr"><div class="cr-n">94%</div><div class="cr-l">Prior auths processed touchlessly</div></div>
+        <div class="cr"><div class="cr-n">4mo</div><div class="cr-l">Implementation cost payback</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-item fade" data-tags="privasure pharma">
+    <div class="case-left">
+      <div class="case-client">Gulf Pharmaceuticals (Julphar)<br>Ras Al Khaimah, UAE</div>
+      <div class="case-metric">2.1M</div>
+      <div class="case-metric-lab">Patient records<br>de-identified annually</div>
+      <div class="case-tags"><span class="case-tag">PrivaSure</span><span class="case-tag">Pharma</span></div>
+    </div>
+    <div class="case-right">
+      <div class="case-name">PrivaSure: PDPL-compliant data sharing infrastructure for a regional pharmaceutical leader</div>
+      <p class="case-q">"PrivaSure gave us the infrastructure to share our patient datasets with three international research partners — something we had been legally unable to do for over two years. The Expert Determination report it generates is exactly what the UAE data protection authority requires."</p>
+      <p class="case-p">Gulf Pharmaceuticals (Julphar) processes over 2.1 million patient-level records annually across its six GCC market operations. PrivaSure was deployed as the central de-identification layer connecting source EHR systems to the company's real-world evidence research platform. The platform's PDPL-aligned Expert Determination methodology and automated audit trail have passed every regulatory review since deployment, enabling three international research partnerships that had been blocked by data privacy uncertainty.</p>
+      <div class="case-results">
+        <div class="cr"><div class="cr-n">2.1M</div><div class="cr-l">Records de-identified/year</div></div>
+        <div class="cr"><div class="cr-n">3</div><div class="cr-l">International research partnerships enabled</div></div>
+        <div class="cr"><div class="cr-n">0</div><div class="cr-l">Regulatory audit findings</div></div>
+        <div class="cr"><div class="cr-n">6wk</div><div class="cr-l">Time to production deployment</div></div>
+      </div>
+    </div>
+  </div>

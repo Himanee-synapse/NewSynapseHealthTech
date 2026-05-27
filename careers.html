@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Join SynapseHealthTech — building clinical AI that health systems trust. Roles in ML Engineering, Clinical Research, Product, and Enterprise Sales across Abu Dhabi, London, and Singapore.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Careers — SynapseHealthTech">
+<meta property="og:description" content="Join SynapseHealthTech — building clinical AI that health systems trust. Roles in ML Engineering, Clinical Research, Product, and Enterprise Sales across Abu Dhabi, London, and Singapore.">
+<meta property="og:url" content="https://synapsehealthtech.com/careers/">
+<meta property="og:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<meta property="og:site_name" content="SynapseHealthTech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Careers — SynapseHealthTech">
+<meta name="twitter:description" content="Join SynapseHealthTech — building clinical AI that health systems trust. Roles in ML Engineering, Clinical Research, Product, and Enterprise Sales across Abu Dhabi, London, and Singapore.">
+<meta name="twitter:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<title>Careers — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0E0B;--bg2:#161410;--bg3:#1D1A14;--fg:#EFEBE2;--sub:#706960;--faint:#252219;--a:#BEFC42;--ln:rgba(239,235,226,.07);--lnh:rgba(239,235,226,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden;cursor:none;opacity:0;animation:pi .45s .1s ease forwards}
+@keyframes pi{to{opacity:1}}
+#dot{position:fixed;width:8px;height:8px;background:var(--a);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;transition:width .2s,height .2s}
+body.lh #dot{width:30px;height:30px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;transition:background .4s}
+nav.dim{background:rgba(15,14,11,.88);backdrop-filter:blur(16px)}
+.logo img{height:34px;mix-blend-mode:screen;display:block}
+.nl{display:flex;gap:2.2rem;list-style:none}
+.nl a{font-family:'Chivo Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s;cursor:none}
+.nl a:hover,.nl a.act{color:var(--fg)}
+.ct{max-width:1280px;margin:0 auto;padding:0 5%}
+.sl{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:3.5rem;display:flex;align-items:center;gap:1rem}
+.sl::after{content:'';flex:1;height:1px;background:var(--ln)}
+.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.fade.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+footer{padding:2.5rem 5%;border-top:1px solid var(--ln);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+.fl a{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;cursor:none;transition:color .2s}
+.fl a:hover{color:var(--fg)}
+.fc{font-family:'Chivo Mono',monospace;font-size:.62rem;color:var(--sub)}
+
+/* HERO */
+#phero{min-height:75vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5% 5rem;border-bottom:1px solid var(--ln);position:relative;overflow:hidden}
+.ph-amb{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 30% 65%,rgba(190,252,66,.03) 0%,transparent 70%)}
+.ph-pre{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.ph-pre::before{content:'';width:20px;height:1px;background:var(--a)}
+.ph-h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:400;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
+.ph-h1 em{font-style:italic;color:var(--a)}
+.ph-foot{display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding-top:2.5rem;border-top:1px solid var(--ln)}
+.ph-sub{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.75;max-width:480px}
+.ph-counts{display:flex;gap:3rem}
+.ph-count-n{font-family:'DM Serif Display',serif;font-size:2.8rem;font-weight:400;line-height:1;color:var(--a);display:block}
+.ph-count-l{font-family:'Chivo Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-top:.3rem;display:block}
+
+/* ABOUT */
+#about{padding:7rem 5%;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.abt-lay{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:7rem;align-items:start}
+.abt-h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:400;line-height:1.1;margin-bottom:1.5rem}
+.abt-h2 em{font-style:italic;color:var(--a)}
+.abt-stats{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.abt-stat{padding:1.5rem 0;border-top:1px solid var(--ln)}
+.abt-stat:last-child{border-bottom:1px solid var(--ln)}
+.abt-stat-n{font-family:'DM Serif Display',serif;font-size:2.5rem;font-weight:400;color:var(--a);line-height:1;margin-bottom:.3rem}
+.abt-stat-l{font-family:'Chivo Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub)}
+.abt-right{}
+.abt-p{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.8;margin-bottom:1.8rem}
+.abt-p:last-of-type{margin-bottom:2.5rem}
+.abt-pillars{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+.abt-pillar{background:var(--faint);border:1px solid var(--ln);padding:1.4rem;border-top:2px solid var(--a)}
+.abt-pillar-h{font-family:'DM Serif Display',serif;font-size:.95rem;font-weight:400;margin-bottom:.5rem}
+.abt-pillar-p{font-size:.78rem;font-weight:300;color:var(--sub);line-height:1.6}
+
+
+/* VALUES */
+#values{padding:7rem 5%;background:var(--bg2);border-bottom:1px solid var(--ln)}
+.val-lay{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 3fr;gap:5rem;align-items:start}
+.val-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2}
+.val-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.val-item{}
+.val-num{font-family:'Chivo Mono',monospace;font-size:.65rem;font-weight:300;letter-spacing:.14em;color:var(--a);margin-bottom:.8rem}
+.val-h3{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:.7rem}
+.val-p{font-size:.85rem;font-weight:300;color:var(--sub);line-height:1.7}
+
+/* ROLES */
+#roles{padding:7rem 5%}
+.roles-lay{max-width:1280px;margin:0 auto}
+.dept{margin-bottom:4rem}
+.dept-name{font-family:'Chivo Mono',monospace;font-size:.68rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--fg);margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--ln)}
+.role-list{display:flex;flex-direction:column}
+.role-item{display:grid;grid-template-columns:1fr auto auto;gap:2rem;align-items:center;padding:1.4rem 0;border-bottom:1px solid var(--ln);cursor:none;text-decoration:none;color:inherit;transition:background .2s}
+.role-item:hover .role-title{color:var(--a)}
+.role-title{font-family:'DM Serif Display',serif;font-size:1.05rem;font-weight:400;transition:color .2s}
+.role-loc{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.08em;color:var(--sub)}
+.role-type{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.08em;color:var(--a);padding:.3rem .7rem;border:1px solid rgba(190,252,66,.25)}
+
+/* BENEFITS */
+#benefits{background:var(--bg3);padding:7rem 5%;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.ben-lay{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.ben-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2}
+.ben-h2 em{font-style:italic;color:var(--a)}
+.ben-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.ben{background:var(--faint);border:1px solid var(--ln);padding:1.5rem}
+.ben-h{font-family:'DM Serif Display',serif;font-size:.95rem;font-weight:400;margin-bottom:.4rem}
+.ben-p{font-size:.8rem;font-weight:300;color:var(--sub);line-height:1.6}
+
+/* MISSION CTA */
+#mission-cta{padding:8rem 5%;position:relative;overflow:hidden}
+.mc-bg{position:absolute;bottom:-.12em;right:-.04em;font-family:'DM Serif Display',serif;font-size:clamp(6rem,14vw,14rem);font-weight:400;color:rgba(239,235,226,.022);pointer-events:none;user-select:none;white-space:nowrap;line-height:1}
+.mc-in{max-width:1280px;margin:0 auto;position:relative;z-index:1}
+.mc-h2{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:400;line-height:1.05;letter-spacing:-.02em;margin-bottom:2rem}
+.mc-h2 em{font-style:italic;color:var(--a)}
+.mc-sub{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.75;max-width:520px;margin-bottom:2.5rem}
+.mc-link{font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--a);text-decoration:none;cursor:none;border-bottom:1px solid rgba(190,252,66,.3);padding-bottom:.2rem;transition:border-color .2s}
+.mc-link:hover{border-color:var(--a)}
+
+
+/* ─ FOOTER STRUCTURE ─ */
+footer{border-top:1px solid var(--ln);padding:0 5%}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0;flex-wrap:wrap}
+.fc{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.fc-link{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s}
+.fc-link:hover{color:var(--fg)}
+/* ─ SOCIAL ICONS — uniform 32×32 circles, right-anchored ─ */
+.footer-social{display:flex;align-items:center;gap:1rem;margin-left:auto;flex-shrink:0}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;color:var(--sub);border:1px solid var(--ln);border-radius:50%;text-decoration:none;flex-shrink:0;transition:color .22s,border-color .22s,background .22s;cursor:none}
+.footer-social a svg{width:14px;height:14px;display:block}
+.footer-social a:hover{color:var(--a);border-color:var(--a);background:rgba(190,252,66,.06)}
+/* ─ CTA BUTTONS ─ */
+.btn-filled{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:var(--a);color:#0F0E0B;font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--a);cursor:none;transition:background .2s,color .2s;white-space:nowrap}
+.btn-filled:hover{background:transparent;color:var(--a)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:transparent;color:var(--fg);font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ln);cursor:none;transition:border-color .2s,color .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--a);color:var(--a)}
+</style>
+<link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/additions.css">
+</head>
+<body>
+<div id="dot"></div>
+<nav id="nav">
+  <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech" width="auto" height="34" loading="eager"></a>
+  <ul class="nl"><li><a href="services.html">Services</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="ecosystemlayer.html">Stacked Layers</a></li><li class="nl-drop"><a href="products.html">Products</a><div class="nl-menu"><a href="privasure.html" class="nl-menu-item"><span class="nl-menu-item-n">PrivaSure</span><span class="nl-menu-item-t">Healthcare Data Privacy</span></a><a href="dental.html" class="nl-menu-item"><span class="nl-menu-item-n">Dental PanoAI</span><span class="nl-menu-item-t">Dental Radiology AI</span></a><a href="pdcm.html" class="nl-menu-item"><span class="nl-menu-item-n">PDCM</span><span class="nl-menu-item-t">Post-Discharge Care Management</span></a><a href="agentic-rcm.html" class="nl-menu-item"><span class="nl-menu-item-n">Agentic RCM</span><span class="nl-menu-item-t">Revenue Cycle Automation</span></a></div></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html"class="act">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-demo">Book a Demo</a>
+  <button id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="phero">
+  <div class="ph-amb"></div>
+  <div class="ph-pre">Work With Us</div>
+  <h1 class="ph-h1">Build the future<br>of clinical <em>intelligence.</em></h1>
+  <div class="ph-foot">
+    <p class="ph-sub">We're a team of clinicians, machine learning engineers, healthcare strategists, and builders working on problems where the stakes are genuinely high. Dubai , London, and India </p>
+
+  </div>
+</section>
+
+
+<!-- ABOUT US -->
+<div class="sticky-subnav">
+  <div class="sticky-subnav-inner">
+    <a href="#about" class="ssn-link active">About</a>
+    <a href="#values" class="ssn-link">Values</a>
+    <a href="#roles" class="ssn-link">Open Roles</a>
+    <a href="#benefits" class="ssn-link">Benefits</a>
+  </div>
+</div>
+<section id="about">
+  <div class="abt-lay">
+    <div class="fade">
+      <div class="sl">About Us</div>
+      <h2 class="abt-h2">Built by people who understand <em>both</em> sides.</h2>
+      
+    </div>
+    <div class="abt-right fade d1">
+      <p class="abt-p">SynapseHealthTech was founded on a single observation: the gap between what clinical AI could do and what hospitals actually trusted it to do was not a technology problem. It was a credibility problem — one created by vendors who understood software but not medicine, or medicine but not enterprise deployment.</p>
+      <p class="abt-p">We built the company to close that gap. Our founding team brought together consultant radiologists, healthcare informaticists, enterprise software engineers, and regulatory affairs specialists under one roof — and our hiring philosophy has remained the same ever since. We grow by adding people who deepen that intersection of clinical and technical expertise.</p>
+      <p class="abt-p">Today we operate across the GCC, Europe,<b>USA</b> and Southeast Asia — headquartered in Dubai and embedded in the health system modernization programs of governments, hospital networks, and life sciences organizations that take clinical AI seriously.</p>
+      <div class="abt-pillars">
+        <div class="abt-pillar"><div class="abt-pillar-h">Clinical First</div><p class="abt-pillar-p">Every product decision is reviewed by our clinical advisory board before development begins.</p></div>
+        <div class="abt-pillar"><div class="abt-pillar-h">Regulated Markets</div><p class="abt-pillar-p">We operate in the most demanding regulatory environments — FDA, MDR, DHA — by design.</p></div>
+        <div class="abt-pillar"><div class="abt-pillar-h">Long Relationships</div><p class="abt-pillar-p">98.4% of our enterprise clients renew. We measure success in years, not contracts.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="values">
+  <div class="val-lay">
+    <div class="fade">
+      <div class="sl">How We Work</div>
+      <h2 class="val-h2">Four principles that guide every decision.</h2>
+    </div>
+    <div class="val-grid fade d1">
+      <div class="val-item"><div class="val-num">01</div><h3 class="val-h3">Clinical Rigour First</h3><p class="val-p">Every product decision starts with a clinical question. We hire people who understand that in healthcare, the cost of being wrong is measured in patient outcomes — and design accordingly.</p></div>
+      <div class="val-item"><div class="val-num">02</div><h3 class="val-h3">Intellectual Honesty</h3><p class="val-p">We don't overclaim what AI can do. We publish our model limitations alongside our performance metrics. We tell clients what the evidence actually supports. This makes us harder to sell, and more trusted when sold.</p></div>
+      <div class="val-item"><div class="val-num">03</div><h3 class="val-h3">Long-Term Thinking</h3><p class="val-p">We structure our teams, products, and client relationships for decades, not quarters. Health systems are long-cycle buyers. We operate on their timeline, not a VC's.</p></div>
+      <div class="val-item"><div class="val-num">04</div><h3 class="val-h3">Diverse Expertise</h3><p class="val-p">The hardest problems in clinical AI require people who understand medicine AND technology. We actively build teams that bridge both — and create the conditions for them to collaborate honestly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="roles-lay">
+    <div class="sl fade">24 Open Positions</div>
+    <div class="dept fade">
+      <div class="dept-name">AI &amp; Research — 6 positions</div>
+      <div class="role-list">
+        <a href="contact.html" class="role-item"><span class="role-title">Senior ML Engineer, Clinical Imaging Models</span><span class="role-loc">Abu Dhabi</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">ML Research Scientist, Biomedical NLP</span><span class="role-loc">London</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">MLOps Engineer, Clinical Platform</span><span class="role-loc">Singapore</span><span class="role-type">Full-time</span></a>
+      </div>
+    </div>
+    <div class="dept fade">
+      <div class="dept-name">Clinical Affairs — 4 positions</div>
+      <div class="role-list">
+        <a href="contact.html" class="role-item"><span class="role-title">Clinical Informatics Specialist</span><span class="role-loc">Abu Dhabi</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">Senior Clinical Advisor, Radiology AI</span><span class="role-loc">London</span><span class="role-type">Part-time / Advisory</span></a>
+      </div>
+    </div>
+    <div class="dept fade">
+      <div class="dept-name">Engineering &amp; Platform — 5 positions</div>
+      <div class="role-list">
+        <a href="contact.html" class="role-item"><span class="role-title">Senior Backend Engineer, HealthOS</span><span class="role-loc">Abu Dhabi</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">Platform Security Engineer</span><span class="role-loc">Abu Dhabi / London</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">Integration Engineer, FHIR &amp; HL7</span><span class="role-loc">Singapore</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">Frontend Engineer, Clinical Dashboards</span><span class="role-loc">Remote</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">DevOps / Platform Engineer</span><span class="role-loc">Abu Dhabi</span><span class="role-type">Full-time</span></a>
+      </div>
+    </div>
+    <div class="dept fade">
+      <div class="dept-name">Commercial &amp; Strategy — 5 positions</div>
+      <div class="role-list">
+        <a href="contact.html" class="role-item"><span class="role-title">Enterprise Sales Director, GCC</span><span class="role-loc">Abu Dhabi</span><span class="role-type">Full-time</span></a>
+        <a href="contact.html" class="role-item"><span class="role-title">VP Partnerships, APAC</span><span class="role-loc">Singapore</span><span class="role-type">Full-time</span></a>
+      </div>
+    </div>
+    <div class="dept fade">
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="ben-lay">
+    <div class="fade">
+      <div class="sl">Benefits</div>
+      <h2 class="ben-h2">Built for people doing <em>important</em> work.</h2>
+    </div>
+    <div class="ben-grid fade d1">
+      <div class="ben"><div class="ben-h">Competitive Compensation</div><p class="ben-p">Market-leading salaries benchmarked against global tech, with meaningful equity participation.</p></div>
+      <div class="ben"><div class="ben-h">Flexible Working</div><p class="ben-p">Hybrid-first culture with genuine flexibility. Remote roles available across most teams.</p></div>
+      <div class="ben"><div class="ben-h">Learning Budget</div><p class="ben-p">Annual learning budget per person — conferences, courses, and clinical training.</p></div>
+      <div class="ben"><div class="ben-h">Mission Alignment</div><p class="ben-p">Quarterly all-hands with clinical outcome updates — so everyone knows the impact of their work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="mission-cta">
+  <div class="mc-bg">CAREERS</div>
+  <div class="mc-in">
+    <h2 class="mc-h2 fade">Don't see your role?<br>We want to <em>hear from you.</em></h2>
+    <p class="mc-sub fade d1">We hire exceptional people across disciplines — clinicians, engineers, strategists, designers, and researchers. If the mission resonates, send us a note.</p>
+    <a href="mailto:careers@synapsehealthtech.ai" class="mc-link fade d2">careers@synapsehealthtech.ai →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech"></a>
+    <ul class="fl"><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="footer-social">
+    <a href="https://instagram.com/synapsehealthtech" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://linkedin.com/company/synapsehealthtech" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://x.com/synapseHT" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.23zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="fc">© 2025 SynapseHealthTech · Abu Dhabi</span>
+    <a href="#" class="fc-link">Privacy Policy</a>
+  </div>
+</footer>
+<script>
+const dot=document.getElementById('dot');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
+document.querySelectorAll('a').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('dim',scrollY>80),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// ── HAMBURGER NAV ──
+const menuBtn = document.getElementById('menu-btn');
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded', open);
+    // Lock scroll when menu open
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close menu on nav link click
+  document.querySelectorAll('.nl a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', false);
+    });
+  });
+  // Close on escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', false);
+    }
+  });
+}
+// ── CURSOR — hide on touch ──
+if (window.matchMedia('(hover: none)').matches) {
+  const d = document.getElementById('dot');
+  if (d) d.style.display = 'none';
+}
+
+
+// ── PRODUCTS DROPDOWN ──
+document.querySelectorAll('.nl-drop').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.classList.add('open')});
+  d.addEventListener('mouseleave',function(){d.classList.remove('open')});
+});
+
+// ── STICKY SUBNAV ACTIVE STATE ──
+(function(){
+  var links=document.querySelectorAll('.ssn-link');
+  if(!links.length)return;
+  var targets=Array.from(links).map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  var io2=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('active')});
+        var active=document.querySelector('.ssn-link[href="#'+e.target.id+'"]');
+        if(active)active.classList.add('active');
+      }
+    });
+  },{threshold:0.25,rootMargin:'-64px 0px -60% 0px'});
+  targets.forEach(function(t){io2.observe(t)});
+})();
+</script>
+</body>
+</html>

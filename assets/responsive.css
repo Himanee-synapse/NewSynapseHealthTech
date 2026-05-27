@@ -1,0 +1,344 @@
+/* ============================================================
+   SYNAPSEHEATHTECH — RESPONSIVE STYLESHEET
+   responsive.css · v1.0.0
+   Breakpoints:
+     Tablet  : max-width 1023px
+     Mobile  : max-width 767px
+     Small   : max-width 479px
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────────
+   HAMBURGER BUTTON (hidden on desktop)
+───────────────────────────────────────────── */
+#menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 300;
+}
+#menu-btn span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--fg);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+  transform-origin: center;
+}
+
+/* Animate to X when open */
+body.menu-open #menu-btn span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+body.menu-open #menu-btn span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+body.menu-open #menu-btn span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile nav overlay */
+body.menu-open .nl {
+  display: flex !important;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  top: 0;
+  background: var(--bg);
+  z-index: 250;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 5rem 5%;
+  animation: fadeIn 0.3s ease;
+}
+body.menu-open .nl a {
+  font-size: 1.1rem !important;
+  letter-spacing: 0.15em;
+  color: var(--sub);
+}
+body.menu-open .nl a:hover,
+body.menu-open .nl a.act { color: var(--fg); }
+
+@keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
+
+
+/* ─────────────────────────────────────────────
+   TABLET — max-width: 1023px
+───────────────────────────────────────────── */
+@media (max-width: 1023px) {
+
+  /* Nav — compress link gaps */
+  .nl { gap: 1.4rem; }
+  .nl a { font-size: 0.6rem; }
+
+  /* Global section padding reduction */
+  #services, #products, #numbers, #perspective,
+  #industries, #careers-t, #trust, #connect,
+  #manifesto, #phero, .srv-section, .prod-sec,
+  #process, #srv-cta, #integrations, #prod-cta,
+  .ind-sec, #ind-cta, #cases, #filter,
+  #about, #values, #roles, #benefits, #mission-cta,
+  #contact-main { padding-top: 5rem; padding-bottom: 5rem; }
+
+  /* 4-col stats → 2×2 grid */
+  .nums { grid-template-columns: 1fr 1fr !important; }
+  .ni { padding: 2.5rem 2rem 2.5rem 0 !important; }
+  .ni:nth-child(2n) { border-right: none !important; padding-right: 0 !important; }
+  .ni:nth-child(2n+1) { padding-left: 0 !important; }
+  .ni:nth-child(3),
+  .ni:nth-child(4) { border-top: 1px solid var(--ln); }
+
+  /* Process 4-col → 2×2 */
+  .proc-steps { grid-template-columns: 1fr 1fr !important; }
+
+  /* Industries 3-col → 2-col */
+  .ind-grid { grid-template-columns: 1fr 1fr !important; }
+  .ind-item:nth-child(n+5) { border-bottom: none; }
+  .ind-item:nth-child(5),
+  .ind-item:nth-child(6) { border-bottom: 1px solid var(--ln); }
+
+  /* Products 3-col detail → description full width + 2-col below */
+  .pd, .prod-bot { grid-template-columns: 1fr 1fr !important; }
+  .pdesc { grid-column: 1 / -1; }
+
+  /* Integration grid 3-col → 2-col */
+  .int-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* About pillars 3-col → 2-col */
+  .abt-pillars { grid-template-columns: 1fr 1fr !important; }
+
+  /* Values grid 2-col — keep, just reduce gap */
+  .val-grid { gap: 2rem; }
+
+  /* Asymmetric grids — reduce left column gap */
+  .abt-lay { gap: 4rem !important; }
+  .val-lay { gap: 3rem !important; }
+  .srv-lay { gap: 4rem !important; }
+  .int-lay { gap: 3rem !important; }
+
+  /* Case study results flex — compress */
+  .case-results { gap: 1.5rem; }
+
+}
+
+
+/* ─────────────────────────────────────────────
+   MOBILE — max-width: 767px
+───────────────────────────────────────────── */
+@media (max-width: 767px) {
+
+  /* ── CURSOR — hide dot on touch devices */
+  #dot { display: none; }
+  body { cursor: auto; }
+
+  /* ── NAV — show hamburger */
+  .nl { display: none; }
+  #menu-btn { display: flex; }
+
+  /* ── GLOBAL SECTION PADDING */
+  #services, #products, #numbers, #perspective,
+  #industries, #careers-t, #trust, #connect,
+  #manifesto, .srv-section, .prod-sec,
+  #process, #srv-cta, #integrations, #prod-cta,
+  .ind-sec, #ind-cta, #cases,
+  #about, #values, #roles, #benefits, #mission-cta { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+
+  /* Reduce section label margin */
+  .sl { margin-bottom: 2rem; }
+
+  /* ── HERO (index.html) */
+  #hero { padding: 6rem 5% 3rem !important; min-height: 100svh; }
+  .h-foot { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .h-acts { flex-direction: row; align-items: flex-start; flex-wrap: wrap; gap: .8rem; }
+
+  /* ── MANIFESTO */
+  .mf-i { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* ── SERVICES */
+  .s-hdr { grid-template-columns: 1fr !important; gap: 2rem !important; margin-bottom: 3rem; }
+  /* Accordion inner */
+  .sc { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  /* Accordion row — remove left number gutter */
+  .st { grid-template-columns: 2.5rem 1fr auto !important; }
+  .sb { grid-template-columns: 2.5rem 1fr !important; }
+  .sr.open .sb { max-height: 600px !important; }
+  /* Service capability tiles → single col */
+  .srv-items { grid-template-columns: 1fr !important; }
+  /* Service section layout */
+  .srv-lay { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  /* Process steps → single col */
+  .proc-steps { grid-template-columns: 1fr !important; }
+  .proc-step { border-left: none !important; border-top: 1px solid var(--ln); padding: 2rem 0 !important; }
+  /* CTA strip */
+  .srv-cta-in { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* ── PRODUCTS */
+  .p-intro { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  /* Product accordion header */
+  .ph { grid-template-columns: 2.5rem 1fr auto !important; }
+  .pe { grid-template-columns: 2.5rem 1fr !important; }
+  .pr.open .pe { max-height: 1200px !important; }
+  /* Product top section */
+  .prod-top { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .prod-top > div:last-child { text-align: left !important; }
+  /* Product detail — all stacked */
+  .pd, .prod-bot, .prod-detail { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .pdesc { grid-column: auto !important; }
+  /* Integration grid */
+  .int-lay { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .int-grid { grid-template-columns: 1fr 1fr !important; }
+  .prod-cta-in { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* ── NUMBERS / STATS */
+  .nums { grid-template-columns: 1fr 1fr !important; }
+  .ni { border-right: none !important; padding: 2rem 0 !important; border-top: 1px solid var(--ln); }
+  .ni:first-child { border-top: none; }
+
+  /* ── PERSPECTIVE */
+  .pla { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .pres { grid-template-columns: 1fr 1fr !important; }
+  .pre { padding: 1.5rem 0 !important; }
+  .pre:nth-child(2n) { border-right: none !important; padding-right: 0 !important; }
+
+  /* ── INDUSTRIES GRID */
+  .ind-hdr { grid-template-columns: 1fr !important; gap: 2rem !important; margin-bottom: 3rem; }
+  .ind-grid { grid-template-columns: 1fr !important; }
+  .ind-item { padding-right: 0 !important; border-bottom: 1px solid var(--ln) !important; }
+  .ind-item:nth-child(n+4) { border-bottom: 1px solid var(--ln) !important; }
+  .ind-item:last-child { border-bottom: none !important; }
+  /* Industries deep-dive sections */
+  .ind-inner { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .ind-uses { grid-template-columns: 1fr !important; }
+  .ind-cta-in { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* ── CAREERS TEASER */
+  .ct-lay { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .role-row { grid-template-columns: 1fr auto !important; }
+  /* Role type badge hidden on mobile to save space */
+  .role-type { display: none; }
+
+  /* ── TRUST */
+  .tr-i { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* ── CONNECT */
+  .c-foot { flex-direction: column; gap: 1.5rem; }
+  .c-bg, .mc-bg { font-size: clamp(5rem, 20vw, 9rem) !important; }
+
+  /* ── CONTACT PAGE */
+  #contact-main { grid-template-columns: 1fr !important; padding-top: 72px; }
+  .c-left { border-right: none !important; border-bottom: 1px solid var(--ln); padding: 3rem 5% !important; justify-content: flex-start !important; gap: 2.5rem; }
+  .c-right { padding: 3rem 5% !important; }
+  .form-row { grid-template-columns: 1fr !important; gap: 0; }
+
+  /* ── CASE STUDIES */
+  .ph-row { flex-wrap: wrap; gap: 2rem; }
+  .ph-stat { border-right: none !important; padding-right: 0 !important; }
+  .case-item { grid-template-columns: 1fr !important; gap: 2.5rem !important; padding: 3.5rem 0 !important; }
+  .case-results { flex-wrap: wrap; gap: 1.5rem; }
+  .cr { border-right: none !important; padding-right: 0 !important; min-width: 120px; }
+
+  /* ── PAGE HEROES (inner pages) */
+  .ph-foot { grid-template-columns: 1fr !important; }
+  .ph-nav { display: none; } /* anchor links redundant on mobile */
+  .ph-products { flex-wrap: wrap; gap: 1rem; }
+
+  /* ── CAREERS PAGE */
+  .ph-foot { grid-template-columns: 1fr !important; gap: 2rem !important; }
+  .ph-counts { gap: 2rem; flex-wrap: wrap; }
+  /* About section */
+  .abt-lay { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .abt-pillars { grid-template-columns: 1fr !important; }
+  .abt-stats { flex-direction: row; flex-wrap: wrap; gap: 0; }
+  .abt-stat { min-width: 45%; }
+  /* Values */
+  .val-lay { grid-template-columns: 1fr !important; gap: 3rem !important; }
+  .val-grid { grid-template-columns: 1fr !important; gap: 2rem; }
+  /* Role list */
+  .role-item { grid-template-columns: 1fr auto !important; gap: 1rem !important; }
+  /* Benefits */
+  .ben-lay { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
+  .ben-grid { grid-template-columns: 1fr !important; }
+
+}
+
+
+/* ─────────────────────────────────────────────
+   SMALL MOBILE — max-width: 479px
+───────────────────────────────────────────── */
+@media (max-width: 479px) {
+
+  /* Hero padding — very small screens */
+  #hero { padding: 5.5rem 5% 2.5rem !important; }
+
+  /* Numbers 2-col → 1-col on tiny screens */
+  .nums { grid-template-columns: 1fr !important; }
+  .ni { border-top: 1px solid var(--ln); padding: 1.8rem 0 !important; }
+
+  /* Perspective results → 1-col */
+  .pres { grid-template-columns: 1fr !important; }
+  .pre { border-right: none !important; padding: 1.2rem 0 !important; }
+
+  /* Integration grid → 1-col */
+  .int-grid { grid-template-columns: 1fr !important; }
+
+  /* About stats → 1-col */
+  .abt-stat { min-width: 100%; }
+
+  /* Case results → 1-col */
+  .case-results { flex-direction: column; gap: 1rem; }
+
+  /* Section label — shorten after rule */
+  .sl { font-size: 0.6rem; letter-spacing: 0.12em; }
+
+  /* Section padding → tighter */
+  #services, #products, #manifesto, #numbers,
+  #perspective, #industries, #careers-t,
+  .srv-section, .prod-sec, .ind-sec,
+  #about, #values, #roles, #benefits { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+
+  /* CTA connect section */
+  .c-h2 { font-size: clamp(2rem, 8vw, 3rem) !important; }
+
+  /* Product header KPI → left align */
+  .prod-top > div:last-child { text-align: left !important; }
+
+  /* Footer — stack vertically */
+  footer { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  .fl { gap: 1.2rem; }
+
+}
+
+
+/* ─────────────────────────────────────────────
+   TOUCH DEVICE OVERRIDES
+   Hover states don't exist on touch — remove
+   interactions that rely on hover visibility
+───────────────────────────────────────────── */
+@media (hover: none) {
+  /* Always show industry link on touch (was hover-only) */
+  .ind-link { opacity: 1 !important; transform: none !important; }
+
+  /* Remove link hover underline animation from accordion rows */
+  .pr::before { display: none; }
+
+  /* Ensure accordion head has clear touch target */
+  .st, .ph { padding-top: 1.2rem !important; padding-bottom: 1.2rem !important; min-height: 56px; }
+}
+
+
+/* ─────────────────────────────────────────────
+   FOOTER SOCIAL — RESPONSIVE
+───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .ft-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.75rem 0;
+  }
+  .ft-top .fl { gap: 1.2rem; }
+  .footer-social { gap: 1rem; }
+}

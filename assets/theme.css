@@ -1,0 +1,236 @@
+/* ============================================================
+   SYNAPSEHEATHTECH — THEME v3.0
+   theme.css
+   ============================================================
+   Design logic:
+   DARK  -> near-black canvas, acid lime GLOWS as neon text
+   LIGHT -> warm ivory paper, near-black INK for punch,
+            acid lime used as FILL (highlighter) at key moments:
+              . Hero accent word  (lime highlight block)
+              . Product KPI boxes (lime fill card)
+              . Connect CTA section (full lime background)
+            Lime as TEXT = never. Lime as FILL = always.
+   ============================================================ */
+
+
+/* 00  LIGHT MODE TOKENS */
+
+[data-theme="light"] {
+  --bg:      #F9F6EE;
+  --bg2:     #EEE9DC;
+  --bg3:     #E6E0D2;
+  --faint:   #DDD7C8;
+  --fg:      #0D0B08;
+  --sub:     #5C554D;
+  --a:       #BEFC42;
+  --a-ink:   #0D0B08;
+  --ln:      rgba(13,11,8,0.10);
+  --lnh:     rgba(13,11,8,0.22);
+}
+
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.30s;
+  transition-timing-function: ease;
+}
+.fade, .hl, .hw, .sr .sb, .pr .pe,
+#dot, .stog, .parr, .ind-link, .tl .ar {
+  transition-property: opacity, transform, max-height, padding, color, border-color;
+}
+
+
+/* 01  NAV */
+
+[data-theme="light"] nav.dim {
+  background: rgba(249,246,238,.96) !important;
+  border-bottom: 1px solid var(--ln);
+}
+[data-theme="light"] body.menu-open .nl {
+  background: var(--bg) !important;
+}
+
+
+/* 02  LOGO */
+.logo img                      { mix-blend-mode: screen;   }
+[data-theme="light"] .logo img { mix-blend-mode: multiply; }
+
+
+/* 03  HERO ACCENT WORD — LIME HIGHLIGHTER BLOCK */
+
+[data-theme="light"] .hl.ac {
+  color: #0D0B08 !important;
+  background: var(--a);
+  padding: 0 0.06em 0.03em;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+[data-theme="light"] .h-amb,
+[data-theme="light"] .ph-amb {
+  background: radial-gradient(ellipse 65% 50% at 38% 62%,rgba(190,252,66,0.09) 0%,transparent 70%) !important;
+}
+
+
+/* 04  STATS — nbar stays lime */
+[data-theme="light"] .nbar { background: var(--a); }
+
+
+/* 05  PRODUCT KPI BOXES — LIME FILL CARDS */
+
+[data-theme="light"] .pkpi {
+  background:   var(--a) !important;
+  border-color: transparent !important;
+}
+[data-theme="light"] .pkn { color: #0D0B08 !important; }
+[data-theme="light"] .pkl { color: rgba(13,11,8,0.62) !important; }
+
+
+/* 06  CONNECT / CTA SECTION — FULL LIME BACKGROUND */
+
+[data-theme="light"] #connect {
+  background: var(--a) !important;
+  border-top: none !important;
+}
+[data-theme="light"] #connect .c-bg   { color: rgba(13,11,8,.05) !important; }
+[data-theme="light"] #connect .sl     { color: rgba(13,11,8,.55) !important; }
+[data-theme="light"] #connect .sl::after  { background: rgba(13,11,8,.18) !important; }
+[data-theme="light"] #connect .c-pre  { color: rgba(13,11,8,.58) !important; }
+[data-theme="light"] #connect .c-pre::before { background: #0D0B08 !important; }
+[data-theme="light"] #connect .c-h2   { color: #0D0B08 !important; }
+[data-theme="light"] #connect .c-h2 em { color: rgba(13,11,8,.38) !important; }
+[data-theme="light"] #connect .c-em   { color: #0D0B08 !important; border-bottom-color: rgba(13,11,8,.28) !important; }
+[data-theme="light"] #connect .c-em:hover { border-bottom-color: #0D0B08 !important; }
+[data-theme="light"] #connect .c-foot { border-top-color: rgba(13,11,8,.16) !important; }
+[data-theme="light"] #connect .tl     { color: rgba(13,11,8,.72) !important; }
+[data-theme="light"] #connect .tl:hover { color: #0D0B08 !important; }
+
+
+/* 07  TEXT-LEVEL LIME -> NEAR-BLACK INK */
+
+[data-theme="light"] .mf-t em   { color: rgba(13,11,8,.34) !important; }
+[data-theme="light"] .p-h2 em   { color: rgba(13,11,8,.30) !important; }
+[data-theme="light"] .srv-h2 em { color: rgba(13,11,8,.36) !important; }
+[data-theme="light"] .c-h2 em   { color: rgba(13,11,8,.33) !important; }
+[data-theme="light"] .c-bg, [data-theme="light"] .mc-bg { color: rgba(13,11,8,.04) !important; }
+[data-theme="light"] .sdet::before { color: rgba(13,11,8,.28) !important; }
+
+[data-theme="light"] .sr:hover .sname,
+[data-theme="light"] .sr.open  .sname { color: var(--a-ink); }
+[data-theme="light"] .sr:hover .stog,
+[data-theme="light"] .sr.open  .stog  { color: var(--a-ink); }
+[data-theme="light"] .pr:hover .ptit,
+[data-theme="light"] .pr.open  .ptit  { color: var(--a-ink); }
+[data-theme="light"] .pr:hover .parr,
+[data-theme="light"] .pr.open  .parr  { color: var(--a-ink); }
+[data-theme="light"] .pr:hover .ptag,
+[data-theme="light"] .pr.open  .ptag  { color: rgba(13,11,8,.55) !important; }
+
+[data-theme="light"] .pfi::before     { background: rgba(13,11,8,.22) !important; }
+[data-theme="light"] .pr::before      { background: var(--a-ink); }
+[data-theme="light"] .int-item:hover  { border-color: rgba(13,11,8,.22) !important; }
+
+[data-theme="light"] .tl:hover        { color: var(--a-ink); }
+[data-theme="light"] .ind-item::before { background: var(--a-ink); }
+[data-theme="light"] .ind-item:hover .ind-name { color: var(--a-ink); }
+[data-theme="light"] .ind-link        { color: var(--a-ink) !important; }
+[data-theme="light"] .role-row:hover .role-title { color: var(--a-ink); }
+[data-theme="light"] .all-roles       { color: var(--a-ink) !important; }
+
+[data-theme="light"] .filt-btn.on {
+  background:   var(--a) !important;
+  color:        #0D0B08 !important;
+  border-color: var(--a) !important;
+}
+
+
+/* 08  THEME TOGGLE BUTTON */
+
+#theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--ln);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  color: var(--sub);
+  flex-shrink: 0;
+}
+#theme-btn:hover { border-color: var(--a); color: var(--fg); }
+[data-theme="light"] #theme-btn:hover { border-color: var(--a-ink); color: var(--a-ink); }
+#theme-btn svg { width: 14px; height: 14px; display: block; pointer-events: none; }
+
+.icon-sun  { display: block; }
+.icon-moon { display: none;  }
+[data-theme="light"] .icon-sun  { display: none;  }
+[data-theme="light"] .icon-moon { display: block; }
+
+
+/* 09  FOOTER — 2-ROW PROFESSIONAL LAYOUT */
+
+footer {
+  padding: 2.8rem 5% 2rem !important;
+  border-top: 1px solid var(--ln);
+  display: block !important;
+}
+.ft-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--ln);
+  flex-wrap: wrap;
+}
+.ft-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.2rem;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+.ft-top .fl { display: flex; gap: 1.8rem; list-style: none; flex-wrap: wrap; }
+.ft-top .fl a {
+  font-family: 'Chivo Mono', monospace;
+  font-size: .62rem; font-weight: 300; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--sub);
+  text-decoration: none; cursor: none; transition: color .2s;
+}
+.ft-top .fl a:hover { color: var(--fg); }
+.fc { font-family: 'Chivo Mono', monospace; font-size: .62rem; color: var(--sub); }
+.fc-link {
+  font-family: 'Chivo Mono', monospace; font-size: .62rem;
+  color: var(--sub); text-decoration: none; cursor: none; transition: color .2s;
+}
+.fc-link:hover { color: var(--fg); }
+
+
+/* 10  SOCIAL ICONS */
+
+.footer-social { display: flex; align-items: center; gap: .9rem; }
+.footer-social a {
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border: 1px solid var(--ln); border-radius: 50%;
+  color: var(--sub); text-decoration: none; cursor: none;
+  transition: border-color .2s, color .2s;
+}
+.footer-social a:hover { border-color: var(--lnh); color: var(--fg); }
+[data-theme="light"] .footer-social a:hover { border-color: var(--a-ink); color: var(--a-ink); }
+.footer-social svg { width: 14px; height: 14px; display: block; }
+
+
+/* 11  RESPONSIVE FOOTER */
+
+@media (max-width: 1023px) { .ft-top .fl { gap: 1.1rem; } }
+@media (max-width: 767px) {
+  .ft-top { flex-direction: column; align-items: flex-start; gap: 1.4rem; }
+  .ft-top .fl { gap: .8rem 1.2rem; }
+  .footer-social { gap: .7rem; }
+}
+@media (max-width: 479px) {
+  .ft-top .fl { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 1rem; }
+}

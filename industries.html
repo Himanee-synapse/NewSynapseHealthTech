@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Clinical AI for hospitals, pharmaceutical companies, medical device manufacturers, insurers, government health agencies, and digital health companies.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Industries — SynapseHealthTech">
+<meta property="og:description" content="Clinical AI for hospitals, pharmaceutical companies, medical device manufacturers, insurers, government health agencies, and digital health companies.">
+<meta property="og:url" content="https://synapsehealthtech.com/industries/">
+<meta property="og:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<meta property="og:site_name" content="SynapseHealthTech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Industries — SynapseHealthTech">
+<meta name="twitter:description" content="Clinical AI for hospitals, pharmaceutical companies, medical device manufacturers, insurers, government health agencies, and digital health companies.">
+<meta name="twitter:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<title>Industries — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F0E0B;--bg2:#161410;--bg3:#1D1A14;--fg:#EFEBE2;--sub:#706960;--faint:#252219;--a:#BEFC42;--ln:rgba(239,235,226,.07);--lnh:rgba(239,235,226,.14)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--fg);overflow-x:hidden;cursor:none;opacity:0;animation:pi .45s .1s ease forwards}
+@keyframes pi{to{opacity:1}}
+#dot{position:fixed;width:8px;height:8px;background:var(--a);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;transition:width .2s,height .2s}
+body.lh #dot{width:30px;height:30px}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 5%;transition:background .4s}
+nav.dim{background:rgba(15,14,11,.88);backdrop-filter:blur(16px)}
+.logo img{height:34px;mix-blend-mode:screen;display:block}
+.nl{display:flex;gap:2.2rem;list-style:none}
+.nl a{font-family:'Chivo Mono',monospace;font-size:.66rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s;cursor:none}
+.nl a:hover,.nl a.act{color:var(--fg)}
+.fade{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.fade.on{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+footer{padding:2.5rem 5%;border-top:1px solid var(--ln);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.fl{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+.fl a{font-family:'Chivo Mono',monospace;font-size:.62rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);text-decoration:none;cursor:none;transition:color .2s}
+.fl a:hover{color:var(--fg)}
+.fc{font-family:'Chivo Mono',monospace;font-size:.62rem;color:var(--sub)}
+
+/* HERO */
+#phero{min-height:65vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 5% 5rem;border-bottom:1px solid var(--ln);position:relative;overflow:hidden}
+.ph-amb{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 45% at 55% 65%,rgba(190,252,66,.028) 0%,transparent 70%)}
+.ph-pre{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.ph-pre::before{content:'';width:20px;height:1px;background:var(--a)}
+.ph-h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:400;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
+.ph-h1 em{font-style:italic;color:var(--a)}
+.ph-sub{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.75;max-width:600px;padding-top:2.5rem;border-top:1px solid var(--ln)}
+
+/* INDUSTRY SECTIONS */
+.ind-sec{padding:7rem 5%;border-bottom:1px solid var(--ln)}
+.ind-sec:nth-child(even){background:var(--bg2)}
+.ind-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
+.ind-left{}
+.ind-num{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--a);margin-bottom:.8rem}
+.ind-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:400;line-height:1.15;margin-bottom:1rem}
+.ind-h2 em{font-style:italic;color:rgba(239,235,226,.4)}
+.ind-right{}
+.ind-p{font-size:.92rem;font-weight:300;color:var(--sub);line-height:1.8;margin-bottom:2.5rem}
+.ind-use-h{font-family:'Chivo Mono',monospace;font-size:.65rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--fg);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid var(--ln)}
+.ind-uses{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:2.5rem}
+.ind-use{background:var(--faint);border:1px solid var(--ln);padding:1.2rem;transition:border-color .2s}
+.ind-use:hover{border-color:rgba(190,252,66,.25)}
+.ind-use-name{font-family:'DM Serif Display',serif;font-size:.95rem;font-weight:400;margin-bottom:.35rem}
+.ind-use-p{font-size:.78rem;font-weight:300;color:var(--sub);line-height:1.55}
+.ind-products{display:flex;gap:.7rem;flex-wrap:wrap}
+.ind-prod{font-family:'Chivo Mono',monospace;font-size:.63rem;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);padding:.35rem .9rem;border:1px solid var(--ln);text-decoration:none;cursor:none;transition:border-color .2s,color .2s}
+.ind-prod:hover{border-color:rgba(190,252,66,.4);color:var(--a)}
+
+/* CTA */
+#ind-cta{padding:6rem 5%;background:var(--bg3);border-top:1px solid var(--ln)}
+.ind-cta-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:4rem}
+.ind-cta-h{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2}
+.ind-cta-h em{font-style:italic;color:var(--a)}
+.ind-cta-link{font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--a);text-decoration:none;cursor:none;white-space:nowrap;border-bottom:1px solid rgba(190,252,66,.3);padding-bottom:.2rem;transition:border-color .2s}
+.ind-cta-link:hover{border-color:var(--a)}
+
+
+/* ─ FOOTER STRUCTURE ─ */
+footer{border-top:1px solid var(--ln);padding:0 5%}
+.ft-top{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--ln);flex-wrap:wrap}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.25rem 0;flex-wrap:wrap}
+.fc{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.fc-link{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);text-decoration:none;transition:color .2s}
+.fc-link:hover{color:var(--fg)}
+/* ─ SOCIAL ICONS — uniform 32×32 circles, right-anchored ─ */
+.footer-social{display:flex;align-items:center;gap:1rem;margin-left:auto;flex-shrink:0}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:32px;height:32px;color:var(--sub);border:1px solid var(--ln);border-radius:50%;text-decoration:none;flex-shrink:0;transition:color .22s,border-color .22s,background .22s;cursor:none}
+.footer-social a svg{width:14px;height:14px;display:block}
+.footer-social a:hover{color:var(--a);border-color:var(--a);background:rgba(190,252,66,.06)}
+/* ─ CTA BUTTONS ─ */
+.btn-filled{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:var(--a);color:#0F0E0B;font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--a);cursor:none;transition:background .2s,color .2s;white-space:nowrap}
+.btn-filled:hover{background:transparent;color:var(--a)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.75rem;background:transparent;color:var(--fg);font-family:'Chivo Mono',monospace;font-size:.75rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ln);cursor:none;transition:border-color .2s,color .2s;white-space:nowrap}
+.btn-ghost:hover{border-color:var(--a);color:var(--a)}
+</style>
+<link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/additions.css">
+</head>
+<body>
+<div id="dot"></div>
+<nav id="nav">
+  <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech" width="auto" height="34" loading="eager"></a>
+  <ul class="nl"><li><a href="services.html">Services</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="ecosystemlayer.html">Stacked Layers</a></li><li class="nl-drop"><a href="products.html">Products</a><div class="nl-menu"><a href="privasure.html" class="nl-menu-item"><span class="nl-menu-item-n">PrivaSure</span><span class="nl-menu-item-t">Healthcare Data Privacy</span></a><a href="dental.html" class="nl-menu-item"><span class="nl-menu-item-n">Dental PanoAI</span><span class="nl-menu-item-t">Dental Radiology AI</span></a><a href="pdcm.html" class="nl-menu-item"><span class="nl-menu-item-n">PDCM</span><span class="nl-menu-item-t">Post-Discharge Care Management</span></a><a href="agentic-rcm.html" class="nl-menu-item"><span class="nl-menu-item-n">Agentic RCM</span><span class="nl-menu-item-t">Revenue Cycle Automation</span></a></div></li><li><a href="industries.html"class="act">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-demo">Book a Demo</a>
+  <button id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="phero">
+  <div class="ph-amb"></div>
+  <div class="ph-pre">Industries We Serve</div>
+  <h1 class="ph-h1">Every corner of<br>healthcare, <em>covered.</em></h1>
+  <p class="ph-sub">SynapseHealthTech operates across the full spectrum of healthcare and life sciences — with purpose-built solutions for each sector's unique clinical, regulatory, and operational demands.</p>
+</section>
+
+<div class="ind-sec" id="i1">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 01</div>
+      <h2 class="ind-h2">Hospitals &amp; <em>Health Systems</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">Large health systems face a paradox: they generate more clinical data than any other entity in healthcare, yet struggle to translate that data into operational intelligence. SynapseHealthTech was built to solve this problem — deploying integrated AI across diagnostics, care operations, pharmacovigilance, and enterprise governance so that the scale of your data becomes a strategic advantage.</p>
+      <p class="ind-p">We work with academic medical centres, regional hospital networks, and integrated delivery networks across the Middle East, Europe,<b>USA</b> and Asia-Pacific</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">AI-Assisted Radiology</div><p class="ind-use-p">Accelerate diagnostic turnaround with pathology detection across all imaging modalities.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Capacity Management</div><p class="ind-use-p">Predict patient flow, optimize bed allocation, and reduce length of stay with real-time AI.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Medication Safety</div><p class="ind-use-p">Real-time drug interaction screening and genomic-aware prescribing at point of care.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Enterprise AI Governance</div><p class="ind-use-p">Unified model management, compliance, and analytics across all facilities.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Services </div>
+      <div class="ind-products">
+        <a href="products.html#p1" class="ind-prod">NeuraScan</a>
+        <a href="products.html#p2" class="ind-prod">CareFlow</a>
+        <a href="products.html#p3" class="ind-prod">PredictRx</a>
+        <a href="products.html#p4" class="ind-prod">HealthOS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ind-sec" id="i2">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 02</div>
+      <h2 class="ind-h2">Pharmaceutical &amp; <em>Life Sciences</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">Drug development timelines are compressing. Regulatory scrutiny is intensifying. And the data infrastructure of most pharma companies is not yet ready for the demands of AI-driven discovery. SynapseHealthTech helps pharmaceutical organizations unlock the value of real-world evidence, accelerate trial design and recruitment, and build the data governance platforms that regulators and investors increasingly demand.</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">Real-World Evidence</div><p class="ind-use-p">Federated patient data repositories for post-market studies and regulatory submission support.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Clinical Trial Optimization</div><p class="ind-use-p">AI-powered patient cohort identification and enrollment acceleration from EHR networks.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Pharmacovigilance</div><p class="ind-use-p">Automated adverse event detection, signal analysis, and regulatory reporting at scale.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Drug Interaction Modeling</div><p class="ind-use-p">Pre-clinical and clinical drug interaction prediction using the PredictRx biomedical model.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Products</div>
+      <div class="ind-products">
+        <a href="products.html#p3" class="ind-prod">PredictRx</a>
+        <a href="products.html#p4" class="ind-prod">HealthOS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ind-sec" id="i3">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 03</div>
+      <h2 class="ind-h2">Medical Device <em>Manufacturers</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">Medical device companies are under growing pressure to embed intelligence into their products — and under growing regulatory scrutiny when they do. SynapseHealthTech provides the AI infrastructure, regulatory expertise, and quality systems that device manufacturers need to develop, clear, and monitor AI-enabled devices with confidence.</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">AI-Enabled Device Development</div><p class="ind-use-p">Architecture and training infrastructure for AI/ML-enabled medical devices under 21 CFR 880.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Regulatory Clearance Support</div><p class="ind-use-p">510(k), De Novo, and PMA submission support with clinical evidence generation frameworks.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Quality Management Systems</div><p class="ind-use-p">ISO 13485-compliant QMS design and implementation for AI-integrated device programs.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Post-Market Surveillance</div><p class="ind-use-p">Continuous performance monitoring, PMCF design, and adverse event reporting infrastructure.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Services</div>
+      <div class="ind-products">
+        <a href="services.html#s4" class="ind-prod">Regulatory Tech</a>
+        <a href="services.html#s1" class="ind-prod">AI Strategy</a>
+        <a href="products.html#p4" class="ind-prod">HealthOS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ind-sec" id="i4">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 04</div>
+      <h2 class="ind-h2">Insurance &amp; <em>Payers</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">Health insurers and payer organizations operate in a data-rich environment where the difference between accurate and inaccurate risk stratification translates directly into financial performance. SynapseHealthTech brings clinical AI to the payer context — enabling more precise risk modeling, fraud detection, and population health management without the infrastructure burden of building in-house.</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">Risk Stratification</div><p class="ind-use-p">Predictive risk scoring for member populations using claims, clinical, and behavioral data.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Prior Authorization AI</div><p class="ind-use-p">Automated clinical decision support for prior authorization requests, reducing turnaround time.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Claims Analytics</div><p class="ind-use-p">Anomaly detection, fraud identification, and clinical coding accuracy review at scale.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Population Health</div><p class="ind-use-p">Intervention targeting and care coordination for high-risk member segments.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Products</div>
+      <div class="ind-products">
+        <a href="products.html#p4" class="ind-prod">HealthOS</a>
+        <a href="products.html#p3" class="ind-prod">PredictRx</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ind-sec" id="i5">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 05</div>
+      <h2 class="ind-h2">Government &amp; <em>Public Health</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">National health authorities and public health agencies are uniquely positioned to benefit from clinical AI — with access to population-scale data, but constrained by legacy infrastructure, sovereignty requirements, and procurement complexity. SynapseHealthTech has worked with health ministries and public health agencies to build national health data infrastructure and AI capabilities that respect sovereignty and serve population health objectives.</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">National Health Data Infrastructure</div><p class="ind-use-p">Sovereign, FHIR-native national health data repositories with federated governance.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Epidemic Surveillance</div><p class="ind-use-p">Population-level disease monitoring, early warning systems, and outbreak modeling.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Health System Analytics</div><p class="ind-use-p">National KPI dashboards, resource utilization reporting, and outcome benchmarking.</p></div>
+        <div class="ind-use"><div class="ind-use-name">AI Policy &amp; Governance</div><p class="ind-use-p">National AI strategy frameworks, regulation design, and procurement advisory.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Services &amp; Products</div>
+      <div class="ind-products">
+        <a href="services.html#s3" class="ind-prod">Data Integration</a>
+        <a href="services.html#s1" class="ind-prod">AI Strategy</a>
+        <a href="products.html#p4" class="ind-prod">HealthOS</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ind-sec" id="i6">
+  <div class="ind-inner">
+    <div class="fade">
+      <div class="ind-num">Industry 06</div>
+      <h2 class="ind-h2">Digital Health <em>Companies</em></h2>
+    </div>
+    <div class="fade d1">
+      <p class="ind-p">Digital health startups and scale-ups face a specific challenge: building clinically credible, regulatorily compliant AI products without the in-house expertise or infrastructure that established healthcare organizations have spent decades building. SynapseHealthTech serves as the clinical AI infrastructure partner for ambitious digital health companies — providing the technology foundation, clinical evidence frameworks, and regulatory pathways that investors and healthcare buyers require.</p>
+      <div class="ind-use-h">Key Use Cases</div>
+      <div class="ind-uses">
+        <div class="ind-use"><div class="ind-use-name">AI Platform Development</div><p class="ind-use-p">Core AI infrastructure, model training pipelines, and clinical validation frameworks for new products.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Regulatory Strategy</div><p class="ind-use-p">FDA, CE, and GCC regulatory pathways for Software as a Medical Device (SaMD) and AI/ML-based SaMD.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Health System Integration</div><p class="ind-use-p">FHIR-native integration architecture for selling into hospital and payer environments.</p></div>
+        <div class="ind-use"><div class="ind-use-name">Clinical Evidence</div><p class="ind-use-p">Study design, data access, and clinical validation programs that generate investor-grade evidence.</p></div>
+      </div>
+      <div class="ind-use-h" style="margin-top:1rem">Relevant Services</div>
+      <div class="ind-products">
+        <a href="services.html#s1" class="ind-prod">AI Strategy</a>
+        <a href="services.html#s3" class="ind-prod">Data Integration</a>
+        <a href="services.html#s4" class="ind-prod">Regulatory Tech</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="ind-cta">
+  <div class="ind-cta-in fade">
+    <h2 class="ind-cta-h">Your industry. Our <em>expertise.</em><br>Let's find where they meet.</h2>
+    <a href="contact.html" class="ind-cta-link">Talk to our team →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech"></a>
+    <ul class="fl"><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="footer-social">
+    <a href="https://instagram.com/synapsehealthtech" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+    <a href="https://linkedin.com/company/synapsehealthtech" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://x.com/synapseHT" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.23zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="fc">© 2025 SynapseHealthTech · Abu Dhabi</span>
+    <a href="#" class="fc-link">Privacy Policy</a>
+  </div>
+</footer>
+<script>
+const dot=document.getElementById('dot');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
+document.querySelectorAll('a').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('dim',scrollY>80),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// ── HAMBURGER NAV ──
+const menuBtn = document.getElementById('menu-btn');
+if (menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded', open);
+    // Lock scroll when menu open
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  // Close menu on nav link click
+  document.querySelectorAll('.nl a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', false);
+    });
+  });
+  // Close on escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      menuBtn.setAttribute('aria-expanded', false);
+    }
+  });
+}
+// ── CURSOR — hide on touch ──
+if (window.matchMedia('(hover: none)').matches) {
+  const d = document.getElementById('dot');
+  if (d) d.style.display = 'none';
+}
+
+
+// ── PRODUCTS DROPDOWN ──
+document.querySelectorAll('.nl-drop').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.classList.add('open')});
+  d.addEventListener('mouseleave',function(){d.classList.remove('open')});
+});
+
+// ── STICKY SUBNAV ACTIVE STATE ──
+(function(){
+  var links=document.querySelectorAll('.ssn-link');
+  if(!links.length)return;
+  var targets=Array.from(links).map(function(l){return document.querySelector(l.getAttribute('href'))}).filter(Boolean);
+  var io2=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(l){l.classList.remove('active')});
+        var active=document.querySelector('.ssn-link[href="#'+e.target.id+'"]');
+        if(active)active.classList.add('active');
+      }
+    });
+  },{threshold:0.25,rootMargin:'-64px 0px -60% 0px'});
+  targets.forEach(function(t){io2.observe(t)});
+})();
+</script>
+</body>
+</html>

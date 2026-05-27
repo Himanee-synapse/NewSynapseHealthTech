@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reduce 30-day readmission rates by 40%. PDCM tracks recovery, monitors health indicators, and alerts care teams in real time during the critical post-discharge window.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDCM — Post-Discharge Care Management | SynapseHealthTech">
+<meta property="og:description" content="Reduce 30-day readmission rates by 40%. PDCM tracks recovery, monitors health indicators, and alerts care teams in real time during the critical post-discharge window.">
+<meta property="og:url" content="https://synapsehealthtech.com/pdcm/">
+<meta property="og:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<meta property="og:site_name" content="SynapseHealthTech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDCM — Post-Discharge Care Management | SynapseHealthTech">
+<meta name="twitter:description" content="Reduce 30-day readmission rates by 40%. PDCM tracks recovery, monitors health indicators, and alerts care teams in real time during the critical post-discharge window.">
+<meta name="twitter:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<title>PDCM — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/synapse.css">
+<link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/additions.css">
+</head>
+<body>
+<div id="dot"></div>
+<nav id="nav">
+  <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech" width="auto" height="34" loading="eager"></a>
+  <ul class="nl"><li><a href="services.html">Services</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="ecosystemlayer.html">Stacked Layers</a></li><li class="nl-drop"><a href="products.html"class="act">Products</a><div class="nl-menu"><a href="privasure.html" class="nl-menu-item"><span class="nl-menu-item-n">PrivaSure</span><span class="nl-menu-item-t">Healthcare Data Privacy</span></a><a href="dental.html" class="nl-menu-item"><span class="nl-menu-item-n">Dental PanoAI</span><span class="nl-menu-item-t">Dental Radiology AI</span></a><a href="pdcm.html" class="nl-menu-item"><span class="nl-menu-item-n">PDCM</span><span class="nl-menu-item-t">Post-Discharge Care Management</span></a><a href="agentic-rcm.html" class="nl-menu-item"><span class="nl-menu-item-n">Agentic RCM</span><span class="nl-menu-item-t">Revenue Cycle Automation</span></a></div></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-demo">Book a Demo</a>
+  <button id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav><style>
+.prod-hero{padding:10rem 5% 6rem;position:relative;overflow:hidden;border-bottom:1px solid var(--ln)}
+.prod-hero-amb{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(190,252,66,.055) 0%,transparent 70%);pointer-events:none}
+.prod-pretag{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--a);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.prod-pretag::before{content:'';width:20px;height:1px;background:var(--a)}
+.prod-hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:4rem}
+.prod-hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:400;line-height:.95;letter-spacing:-.02em;color:var(--fg)}
+.prod-hero-h1 em{color:rgba(239,235,226,.28);font-style:normal}
+.prod-hero-sub{font-size:1.05rem;font-weight:300;color:var(--sub);line-height:1.75;max-width:540px;margin-top:2rem}
+.prod-kpi-block{text-align:right;flex-shrink:0}
+.prod-kpi-n{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:400;color:var(--a);line-height:1}
+.prod-kpi-l{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-top:.6rem;line-height:1.6}
+.prod-hero-acts{display:flex;gap:1.5rem;margin-top:3rem;flex-wrap:wrap}
+.prod-sec2{padding:7rem 5%;border-bottom:1px solid var(--ln)}
+.prod-sec2-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
+.prod-sec2-inner.three{grid-template-columns:1fr 1fr 1fr;gap:3rem}
+.prod-sec-label{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.prod-sec-label::after{content:'';flex:1;height:1px;background:var(--ln);max-width:60px}
+.prod-sec-h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--fg);margin-bottom:1.5rem}
+.prod-sec-h2 em{color:rgba(239,235,226,.28);font-style:normal}
+.prod-body{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.8;margin-bottom:1.5rem}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
+.feat-item{font-size:.88rem;font-weight:300;color:var(--fg);display:flex;align-items:start;gap:.9rem;padding-bottom:.75rem;border-bottom:1px solid var(--ln);line-height:1.55}
+.feat-item:last-child{border-bottom:none}
+.feat-item::before{content:'→';font-family:'Chivo Mono',monospace;font-size:.75rem;color:var(--a);flex-shrink:0;margin-top:.15em}
+.spec-grid{display:grid;gap:0}
+.spec-row{display:grid;grid-template-columns:1fr 1.6fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.spec-row:first-child{border-top:1px solid var(--ln)}
+.spec-key{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.spec-val{font-size:.88rem;font-weight:300;color:var(--fg)}
+.use-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.use-card{padding:2rem;border:1px solid var(--ln);transition:border-color .25s}
+.use-card:hover{border-color:rgba(190,252,66,.25)}
+.use-card-h{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--fg);margin-bottom:.75rem}
+.use-card-p{font-size:.88rem;font-weight:300;color:var(--sub);line-height:1.7}
+.demo-section{padding:7rem 5%;border-bottom:1px solid var(--ln);background:var(--bg2)}
+.demo-inner{max-width:1280px;margin:0 auto}
+.demo-window{border:1px solid var(--ln);background:var(--bg3);padding:2rem;margin-top:3rem;font-family:'Chivo Mono',monospace}
+.demo-bar{display:flex;gap:.6rem;margin-bottom:1.5rem}
+.demo-dot{width:10px;height:10px;border-radius:50%;background:var(--ln)}
+</style>
+
+<section class="prod-hero">
+  <div class="prod-hero-amb"></div>
+  <div class="ct">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="products.html">Products</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-curr">PDCM</span>
+  </nav>
+    <div class="prod-pretag fade">Product 03 — Post-Discharge Care Management</div>
+    <div class="prod-hero-inner">
+      <div>
+        <h1 class="prod-hero-h1 fade">PDCM<br><em>by SynapseHealthTech</em></h1>
+        <p class="prod-hero-sub fade d1">Track recovery, manage co-morbidities, and monitor health indicators for patients after discharge.</p>
+        <div class="prod-hero-acts fade d2">
+          <a href="contact.html" class="btn-filled">Request a pilot →</a>
+          <a href="contact.html" class="btn-ghost">Download clinical outcomes data</a>
+        </div>
+      </div>
+      <div class="prod-kpi-block fade d1">
+        <div class="prod-kpi-n">40%</div>
+        <div class="prod-kpi-l">Average reduction in<br>30-day readmission<br>rates across deployments</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW + CAPABILITIES + SPECS -->
+<section class="prod-sec2">
+  <div class="ct">
+    <div class="prod-sec2-inner">
+      <div>
+        <div class="prod-sec-label fade">01 — Overview</div>
+        <h2 class="prod-sec-h2 fade">What is <em>PDCM?</em></h2>
+        <p class="prod-body fade">PDCM is a patient management application built for the critical post-discharge window — where clinical outcomes are determined but clinical oversight is reduced. The platform connects care coordinators, primary care physicians, and patients in a structured recovery management workflow.</p>
+        <p class="prod-body fade">From surgical recovery tracking to co-morbidity management, PDCM monitors health indicators in near real time — alerting clinical teams to deterioration before it becomes readmission, and keeping patients engaged in their own recovery through a dedicated mobile app.</p>
+        <div style="margin-top:2.5rem">
+          <div class="prod-sec-label fade">Technical specs</div>
+          <div class="spec-grid fade"><div class="spec-row"><div class="spec-key">Patient Interface</div><div class="spec-val">iOS &amp; Android app + SMS fallback</div></div>
+<div class="spec-row"><div class="spec-key">Clinical Interface</div><div class="spec-val">Web portal, EHR widget</div></div>
+<div class="spec-row"><div class="spec-key">Integration</div><div class="spec-val">HL7 FHIR R4, Epic, Cerner</div></div>
+<div class="spec-row"><div class="spec-key">Compliance</div><div class="spec-val">HIPAA, CE Mark, UAE DHA</div></div>
+<div class="spec-row"><div class="spec-key">Alert Latency</div><div class="spec-val">&lt; 2 minutes from threshold breach to notification</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="prod-sec-label fade">02 — Key capabilities</div>
+        <ul class="feat-list"><li class="feat-item">Automated discharge care plan generation and patient-facing summary</li>
+<li class="feat-item">Remote health indicator monitoring — vitals, symptoms, medication adherence</li>
+<li class="feat-item">Co-morbidity management dashboards for care coordinators</li>
+<li class="feat-item">Intelligent alert engine — escalation thresholds set per condition and patient risk</li>
+<li class="feat-item">Patient engagement tracking with SMS and app-based check-in workflows</li>
+<li class="feat-item">EHR integration — progress notes pushed directly back to the clinical record</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-section">
+  <div class="demo-inner">
+    <div class="prod-sec-label fade">Live demo</div>
+    <div class="prod-sec-h2 fade">Recovery dashboard — <em>live view.</em></div>
+    <p class="prod-body fade">The PDCM care coordinator dashboard surfaces patient status, alert flags, and engagement scores across the post-discharge cohort in real time.</p>
+    <div class="demo-window fade d1">
+      <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+      <div style="font-size:.78rem;display:flex;flex-direction:column;gap:1.2rem">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+          <div style="padding:.85rem 1rem;background:rgba(255,255,255,.04);border:1px solid var(--ln)">
+            <div style="color:var(--sub);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem">Active patients</div>
+            <div id="pdcm-count" style="font-family:'DM Serif Display',serif;font-size:2rem;color:var(--fg)">47</div>
+          </div>
+          <div style="padding:.85rem 1rem;background:rgba(230,75,74,.06);border:1px solid rgba(230,75,74,.2)">
+            <div style="color:var(--sub);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem">Alerts today</div>
+            <div id="pdcm-alerts" style="font-family:'DM Serif Display',serif;font-size:2rem;color:#E24B4A">3</div>
+          </div>
+          <div style="padding:.85rem 1rem;background:rgba(29,158,117,.06);border:1px solid rgba(29,158,117,.2)">
+            <div style="color:var(--sub);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem">Engagement rate</div>
+            <div id="pdcm-eng" style="font-family:'DM Serif Display',serif;font-size:2rem;color:#1D9E75">84%</div>
+          </div>
+        </div>
+        <div>
+          <div style="color:var(--sub);letter-spacing:.12em;text-transform:uppercase;font-size:.62rem;margin-bottom:.75rem">Patient status — post-surgical cohort</div>
+          <div id="pdcm-patients" style="display:flex;flex-direction:column;gap:.4rem"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const pdPats=[
+  {name:'Pt. TK-0481',day:'Day 8',status:'On track',vitals:'Stable',flag:false},
+  {name:'Pt. AM-0293',day:'Day 3',status:'Alert: Elevated BP',vitals:'BP 148/94',flag:true},
+  {name:'Pt. SR-0112',day:'Day 14',status:'On track',vitals:'Stable',flag:false},
+  {name:'Pt. FH-0774',day:'Day 5',status:'Missed check-in',vitals:'Unknown',flag:true},
+  {name:'Pt. ZA-0388',day:'Day 11',status:'On track',vitals:'Stable',flag:false},
+];
+function renderPDCM(){
+  document.getElementById('pdcm-patients').innerHTML=pdPats.map(p=>`<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.5rem;padding:.4rem .6rem;background:${p.flag?'rgba(230,75,74,.05)':'rgba(255,255,255,.03)'};border-left:2px solid ${p.flag?'#E24B4A':'var(--ln)'}">
+    <span style="color:var(--fg)">${p.name}</span>
+    <span style="color:var(--sub)">${p.day}</span>
+    <span style="color:${p.flag?'#E24B4A':'#1D9E75'}">${p.status}</span>
+    <span style="color:var(--sub)">${p.vitals}</span></div>`).join('');
+  // Live-update one patient status occasionally
+}
+setInterval(()=>{
+  const c=parseInt(document.getElementById('pdcm-count').textContent);
+  document.getElementById('pdcm-count').textContent=c+(Math.random()>0.7?1:0);
+  document.getElementById('pdcm-eng').textContent=Math.max(78,Math.min(92,parseInt(document.getElementById('pdcm-eng').textContent)+(Math.random()>0.5?1:-1)))+'%';
+},2800);
+renderPDCM();
+</script>
+
+<!-- USE CASES -->
+<section class="prod-sec2">
+  <div class="ct">
+    <div class="prod-sec-label fade">03 — Who it is for</div>
+    <h2 class="prod-sec-h2 fade">Built for <em>your context.</em></h2>
+    <div class="use-grid" style="margin-top:3rem"><div class="use-card fade"><div class="use-card-h">Surgical Services</div><p class="use-card-p">Monitor post-operative recovery, wound care adherence, and early warning signs for surgical site complications.</p></div>
+<div class="use-card fade"><div class="use-card-h">Cardiology</div><p class="use-card-p">Track vital signs, medication adherence, and activity levels for post-cardiac event patients during the high-risk recovery window.</p></div>
+<div class="use-card fade"><div class="use-card-h">Oncology</div><p class="use-card-p">Manage chemotherapy side-effect reporting, appointment adherence, and quality-of-life indicators between hospital visits.</p></div>
+<div class="use-card fade"><div class="use-card-h">Chronic Disease Programs</div><p class="use-card-p">Coordinate long-term care for patients with diabetes, COPD, and renal disease discharged after acute episodes.</p></div></div>
+  </div>
+<section class="testi-section">
+  <div class="testi-inner">
+    <div class="prod-sec-label fade">04 — Client outcomes</div>
+    <div class="testi-grid">
+      <div class="testi-card fade">
+        <p class="testi-q">PDCM changed how we think about the discharge moment. We used to see discharge as the end of our responsibility. Now we treat it as the start of a 30-day engagement. Our cardiac readmission rate has fallen by 43% in the first two quarters.</p>
+        <div class="testi-meta">
+          <div class="testi-name">Dr. Mariam Al Hosani</div>
+          <div class="testi-role">Head of Cardiology<br>Rashid Medical Centre — Dubai Health Authority</div>
+          <div class="testi-outcome">43%</div>
+          <div class="testi-outcome-l">Cardiac 30-day readmission reduction, first two quarters</div>
+        </div>
+      </div>
+      <div class="testi-card fade d1">
+        <p class="testi-q">Our care coordinators now manage 40% more post-discharge patients than before — not because we hired more people, but because the dashboard surfaces only the patients who need attention. Everything else is monitored automatically.</p>
+        <div class="testi-meta">
+          <div class="testi-name">Hessa Al Nuaimi</div>
+          <div class="testi-role">Director of Care Coordination<br>NMC Royal Hospital — Abu Dhabi</div>
+          <div class="testi-outcome">40%</div>
+          <div class="testi-outcome-l">More patients managed per coordinator, same headcount</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="prod-sec-label fade">05 — Frequently asked</div>
+    <div class="faq-layout">
+      <div>
+        <h2 class="faq-intro-h fade">Common <em>questions.</em></h2>
+        <p class="faq-intro-p fade">Every implementation is different. These are the questions we hear most often — answered directly, without the sales wrapper.</p>
+        <div style="margin-top:2.5rem" class="fade d1">
+          <a href="contact.html" class="btn-ghost" style="display:inline-flex">Ask us anything →</a>
+        </div>
+      </div>
+      <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">How does PDCM connect to our existing EHR system?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">PDCM integrates via HL7 FHIR R4 APIs, supporting Epic MyChart, Cerner PowerChart, Oracle Health, and Meditech. The integration is configured during onboarding — typically 4–8 hours for standard FHIR-enabled EHRs. Post-discharge progress notes, vital sign readings, and alert events are pushed back to the EHR automatically, maintaining a complete longitudinal record.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">What happens when a patient does not have a smartphone?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">PDCM supports SMS-based check-ins as a full fallback pathway. Patients receive structured SMS questions at configured intervals and respond by text. Responses are parsed by the platform and fed into the same monitoring dashboard as app-based data. Telephone check-in workflows are also available for high-acuity or elderly populations.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">How quickly does the alert system notify care coordinators?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">Alert latency is under 2 minutes from threshold breach to notification. Thresholds are configured per condition and per individual patient risk profile during discharge. Alerts are delivered via the web dashboard, email, and SMS simultaneously. Escalation paths — from coordinator to on-call physician — are configurable per department.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">Can PDCM be customised for different surgical specialties?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">Yes. PDCM ships with pre-configured pathways for cardiac surgery, orthopaedic surgery, oncology, bariatric surgery, and general surgery. Each pathway defines the monitoring schedule, health indicator set, patient-facing questionnaire, and alert thresholds relevant to that specialty. Custom pathways can be configured in 2–3 days by your clinical team using the pathway builder in the admin portal.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">What evidence supports the 40% readmission reduction figure?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">The 40% figure is the average reduction observed across our first 12 health system deployments, measured over the first 6 months of operation against the preceding 12-month baseline for the same patient population and surgical cohorts. The range across deployments was 29%–54%. Our clinical evidence report provides the full methodology, inclusion criteria, and site-level breakdowns — available on request from your account team.</p></div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- CTA -->
+<section style="padding:8rem 5%;text-align:center;border-bottom:1px solid var(--ln)">
+  <div class="ct">
+    <div class="prod-sec-label fade" style="justify-content:center">Get started</div>
+    <h2 class="prod-sec-h2 fade" style="text-align:center;max-width:600px;margin:0 auto 2.5rem">PDCM — <em>ready when you are.</em></h2>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap" class="fade d1">
+      <a href="contact.html" class="btn-filled">Request a pilot →</a>
+      <a href="products.html" class="btn-ghost">View all products</a>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:767px){
+  .prod-hero-inner{grid-template-columns:1fr!important;gap:2rem!important}
+  .prod-kpi-block{text-align:left!important}
+  .prod-sec2-inner{grid-template-columns:1fr!important;gap:3rem!important}
+  .use-grid{grid-template-columns:1fr!important}
+  .prod-hero{padding:8rem 5% 4rem}
+}
+</style>
+
+<footer>
+  <div class="ft-top">
+    <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech"></a>
+    <ul class="fl"><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="footer-social">
+      <a href="https://instagram.com/synapsehealthtech" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://linkedin.com/company/synapsehealthtech" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://x.com/synapseHT" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.23zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="fc">© 2025 SynapseHealthTech · Abu Dhabi</span>
+    <a href="#" class="fc-link">Privacy Policy</a>
+  </div>
+</footer>
+<script>
+const dot=document.getElementById('dot');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.sr,.pr,.ind-item,.role-row,.cert').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('dim',scrollY>80),{passive:true});
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0.1});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+// Hamburger
+const menuBtn=document.getElementById('menu-btn');
+if(menuBtn){menuBtn.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');menuBtn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''});document.querySelectorAll('.nl a').forEach(a=>{a.addEventListener('click',()=>{document.body.classList.remove('menu-open');document.body.style.overflow='';menuBtn.setAttribute('aria-expanded',false)})});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open')){document.body.classList.remove('menu-open');document.body.style.overflow='';menuBtn.setAttribute('aria-expanded',false)}});}
+if(window.matchMedia('(hover: none)').matches){const d=document.getElementById('dot');if(d)d.style.display='none';}
+
+// ── PRODUCTS DROPDOWN ──
+document.querySelectorAll('.nl-drop').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.classList.add('open')});
+  d.addEventListener('mouseleave',function(){d.classList.remove('open')});
+});
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!isOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

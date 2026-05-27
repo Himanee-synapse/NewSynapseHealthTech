@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base href="/Product%20DropDown/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI-powered dental radiology analysis in under 30 seconds. Upload any panoramic, periapical, or CBCT image and receive a structured diagnostic report with 47+ conditions detected.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dental PanoAI — Dental Radiology AI | SynapseHealthTech">
+<meta property="og:description" content="AI-powered dental radiology analysis in under 30 seconds. Upload any panoramic, periapical, or CBCT image and receive a structured diagnostic report with 47+ conditions detected.">
+<meta property="og:url" content="https://synapsehealthtech.com/dental/">
+<meta property="og:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<meta property="og:site_name" content="SynapseHealthTech">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dental PanoAI — Dental Radiology AI | SynapseHealthTech">
+<meta name="twitter:description" content="AI-powered dental radiology analysis in under 30 seconds. Upload any panoramic, periapical, or CBCT image and receive a structured diagnostic report with 47+ conditions detected.">
+<meta name="twitter:image" content="https://synapsehealthtech.com/assets/og-cover.png">
+<title>Dental PanoAI — SynapseHealthTech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Chivo+Mono:wght@300;400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/synapse.css">
+<link rel="stylesheet" href="assets/responsive.css">
+<link rel="stylesheet" href="assets/additions.css">
+</head>
+<body>
+<div id="dot"></div>
+<nav id="nav">
+  <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech" width="auto" height="34" loading="eager"></a>
+  <ul class="nl"><li><a href="services.html">Services</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="ecosystemlayer.html">Stacked Layers</a></li><li class="nl-drop"><a href="products.html"class="act">Products</a><div class="nl-menu"><a href="privasure.html" class="nl-menu-item"><span class="nl-menu-item-n">PrivaSure</span><span class="nl-menu-item-t">Healthcare Data Privacy</span></a><a href="dental.html" class="nl-menu-item"><span class="nl-menu-item-n">Dental PanoAI</span><span class="nl-menu-item-t">Dental Radiology AI</span></a><a href="pdcm.html" class="nl-menu-item"><span class="nl-menu-item-n">PDCM</span><span class="nl-menu-item-t">Post-Discharge Care Management</span></a><a href="agentic-rcm.html" class="nl-menu-item"><span class="nl-menu-item-n">Agentic RCM</span><span class="nl-menu-item-t">Revenue Cycle Automation</span></a></div></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+  <a href="contact.html" class="nav-demo">Book a Demo</a>
+  <button id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav><style>
+.prod-hero{padding:10rem 5% 6rem;position:relative;overflow:hidden;border-bottom:1px solid var(--ln)}
+.prod-hero-amb{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(190,252,66,.055) 0%,transparent 70%);pointer-events:none}
+.prod-pretag{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--a);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.prod-pretag::before{content:'';width:20px;height:1px;background:var(--a)}
+.prod-hero-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:end;gap:4rem}
+.prod-hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(3.5rem,8vw,7rem);font-weight:400;line-height:.95;letter-spacing:-.02em;color:var(--fg)}
+.prod-hero-h1 em{color:rgba(239,235,226,.28);font-style:normal}
+.prod-hero-sub{font-size:1.05rem;font-weight:300;color:var(--sub);line-height:1.75;max-width:540px;margin-top:2rem}
+.prod-kpi-block{text-align:right;flex-shrink:0}
+.prod-kpi-n{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:400;color:var(--a);line-height:1}
+.prod-kpi-l{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub);margin-top:.6rem;line-height:1.6}
+.prod-hero-acts{display:flex;gap:1.5rem;margin-top:3rem;flex-wrap:wrap}
+.prod-sec2{padding:7rem 5%;border-bottom:1px solid var(--ln)}
+.prod-sec2-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
+.prod-sec2-inner.three{grid-template-columns:1fr 1fr 1fr;gap:3rem}
+.prod-sec-label{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+.prod-sec-label::after{content:'';flex:1;height:1px;background:var(--ln);max-width:60px}
+.prod-sec-h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--fg);margin-bottom:1.5rem}
+.prod-sec-h2 em{color:rgba(239,235,226,.28);font-style:normal}
+.prod-body{font-size:.95rem;font-weight:300;color:var(--sub);line-height:1.8;margin-bottom:1.5rem}
+.feat-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:.5rem}
+.feat-item{font-size:.88rem;font-weight:300;color:var(--fg);display:flex;align-items:start;gap:.9rem;padding-bottom:.75rem;border-bottom:1px solid var(--ln);line-height:1.55}
+.feat-item:last-child{border-bottom:none}
+.feat-item::before{content:'→';font-family:'Chivo Mono',monospace;font-size:.75rem;color:var(--a);flex-shrink:0;margin-top:.15em}
+.spec-grid{display:grid;gap:0}
+.spec-row{display:grid;grid-template-columns:1fr 1.6fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--ln);align-items:baseline}
+.spec-row:first-child{border-top:1px solid var(--ln)}
+.spec-key{font-family:'Chivo Mono',monospace;font-size:.67rem;font-weight:300;letter-spacing:.12em;text-transform:uppercase;color:var(--sub)}
+.spec-val{font-size:.88rem;font-weight:300;color:var(--fg)}
+.use-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.use-card{padding:2rem;border:1px solid var(--ln);transition:border-color .25s}
+.use-card:hover{border-color:rgba(190,252,66,.25)}
+.use-card-h{font-family:'DM Serif Display',serif;font-size:1.2rem;font-weight:400;color:var(--fg);margin-bottom:.75rem}
+.use-card-p{font-size:.88rem;font-weight:300;color:var(--sub);line-height:1.7}
+.demo-section{padding:7rem 5%;border-bottom:1px solid var(--ln);background:var(--bg2)}
+.demo-inner{max-width:1280px;margin:0 auto}
+.demo-window{border:1px solid var(--ln);background:var(--bg3);padding:2rem;margin-top:3rem;font-family:'Chivo Mono',monospace}
+.demo-bar{display:flex;gap:.6rem;margin-bottom:1.5rem}
+.demo-dot{width:10px;height:10px;border-radius:50%;background:var(--ln)}
+</style>
+
+<section class="prod-hero">
+  <div class="prod-hero-amb"></div>
+  <div class="ct">
+    <nav class="breadcrumb" aria-label="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="products.html">Products</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-curr">Dental PanoAI</span>
+  </nav>
+    <div class="prod-pretag fade">Product 02 — Dental Radiology AI</div>
+    <div class="prod-hero-inner">
+      <div>
+        <h1 class="prod-hero-h1 fade">Dental PanoAI<br><em>by SynapseHealthTech</em></h1>
+        <p class="prod-hero-sub fade d1">Upload any dental radiology image. Receive a comprehensive AI-generated diagnostic report in seconds.</p>
+        <div class="prod-hero-acts fade d2">
+          <a href="contact.html" class="btn-filled">Try Dental PanoAI →</a>
+          <a href="contact.html" class="btn-ghost">View sample report</a>
+        </div>
+      </div>
+      <div class="prod-kpi-block fade d1">
+        <div class="prod-kpi-n">< 30s</div>
+        <div class="prod-kpi-l">AI report generation<br>from image upload<br>to structured findings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW + CAPABILITIES + SPECS -->
+<section class="prod-sec2">
+  <div class="ct">
+    <div class="prod-sec2-inner">
+      <div>
+        <div class="prod-sec-label fade">01 — Overview</div>
+        <h2 class="prod-sec-h2 fade">What is <em>Dental PanoAI?</em></h2>
+        <p class="prod-body fade">Dental PanoAI analyzes panoramic radiographs, periapical films, and CBCT scans using advanced deep learning models trained on millions of dental images — surfacing diagnoses, anomalies, and critical findings with the speed and consistency that clinical teams demand.</p>
+        <p class="prod-body fade">The platform empowers dental teams with accurate, actionable information at the point of care — streamlining workflows, reducing reporting time, and supporting more confident clinical decisions across general practice, oral surgery, and specialist contexts.</p>
+        <div style="margin-top:2.5rem">
+          <div class="prod-sec-label fade">Technical specs</div>
+          <div class="spec-grid fade"><div class="spec-row"><div class="spec-key">Modalities</div><div class="spec-val">Panoramic, Periapical, Bitewing, CBCT</div></div>
+<div class="spec-row"><div class="spec-key">Integration</div><div class="spec-val">DICOM, cloud upload, PMS API</div></div>
+<div class="spec-row"><div class="spec-key">Report Format</div><div class="spec-val">Structured PDF + structured data</div></div>
+<div class="spec-row"><div class="spec-key">Accuracy</div><div class="spec-val">98.2% sensitivity across primary conditions</div></div>
+<div class="spec-row"><div class="spec-key">Turnaround</div><div class="spec-val">< 30 seconds per study</div></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="prod-sec-label fade">02 — Key capabilities</div>
+        <ul class="feat-list"><li class="feat-item">Full panoramic radiograph analysis with per-tooth anomaly mapping</li>
+<li class="feat-item">Detection of caries, periapical pathology, bone loss, and impactions</li>
+<li class="feat-item">Structured report generation with clinical narrative and confidence scores</li>
+<li class="feat-item">CBCT and bitewing radiograph compatibility</li>
+<li class="feat-item">One-click integration with leading dental practice management systems</li>
+<li class="feat-item">47+ dental conditions detected across all radiograph modalities</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="demo-section">
+  <div class="demo-inner">
+    <div class="prod-sec-label fade">Live demo</div>
+    <div class="prod-sec-h2 fade">AI analysis — <em>panoramic view.</em></div>
+    <p class="prod-body fade">Dental PanoAI scans each region of the panoramic radiograph sequentially, surfacing findings with confidence scores and clinical narrative automatically.</p>
+    <div class="demo-window fade d1">
+      <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+      <div style="display:flex;gap:2rem;align-items:start;font-size:.78rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <div style="color:var(--sub);letter-spacing:.12em;text-transform:uppercase;font-size:.62rem;margin-bottom:1rem">Scan progress</div>
+          <div id="dental-regions" style="display:flex;flex-direction:column;gap:.4rem"></div>
+        </div>
+        <div style="flex:1;min-width:220px">
+          <div style="color:var(--a);letter-spacing:.12em;text-transform:uppercase;font-size:.62rem;margin-bottom:1rem">Findings generated</div>
+          <div id="dental-findings" style="display:flex;flex-direction:column;gap:.5rem"></div>
+          <div id="dental-summary" style="margin-top:1rem;font-size:.7rem;color:var(--sub)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+const dRegions=[
+  {name:'Upper right quadrant (UR)',finding:'Periapical radiolucency UR6',severity:'high'},
+  {name:'Upper anterior',finding:'No significant anomaly',severity:'clear'},
+  {name:'Upper left quadrant (UL)',finding:'Interproximal caries UL4–UL5',severity:'medium'},
+  {name:'Lower right quadrant (LR)',finding:'Impacted LR8 — partial eruption',severity:'medium'},
+  {name:'Lower anterior',finding:'Mild bone loss — lower anterior',severity:'low'},
+  {name:'Lower left quadrant (LL)',finding:'No significant anomaly',severity:'clear'},
+  {name:'TMJ region',finding:'Within normal limits bilaterally',severity:'clear'},
+];
+const sColors={high:'#E24B4A',medium:'#EF9F27',low:'var(--a)',clear:'#1D9E75'};
+let dr=0;
+function renderDental(){
+  document.getElementById('dental-regions').innerHTML=dRegions.map((r,i)=>`<div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(255,255,255,.03);border-left:2px solid ${i<dr?sColors[r.severity]:'var(--ln)'}">
+    <span style="color:${i<dr?'var(--fg)':'var(--sub)'}">${r.name}</span>
+    <span style="color:${i<dr?sColors[r.severity]:'transparent'};font-size:.65rem">${i<dr?(r.severity==='clear'?'✓':'⚠'):'...'}</span></div>`).join('');
+  document.getElementById('dental-findings').innerHTML=dRegions.slice(0,dr).filter(r=>r.severity!=='clear').map(r=>`<div style="padding:.35rem .6rem;border-left:2px solid ${sColors[r.severity]};background:rgba(255,255,255,.03);color:var(--fg)">${r.finding}</div>`).join('');
+  const done=dr>=dRegions.length;
+  document.getElementById('dental-summary').textContent=done?`Report ready — ${dRegions.filter(r=>r.severity!=='clear').length} findings across ${dRegions.length} regions. Generation time: 18 seconds.`:`Analysing region ${dr+1} of ${dRegions.length}...`;
+  if(!done){setTimeout(()=>{dr++;renderDental()},700);}
+  else{setTimeout(()=>{dr=0;renderDental()},4000);}
+}
+setTimeout(renderDental,600);
+</script>
+
+<!-- USE CASES -->
+<section class="prod-sec2">
+  <div class="ct">
+    <div class="prod-sec-label fade">03 — Who it is for</div>
+    <h2 class="prod-sec-h2 fade">Built for <em>your context.</em></h2>
+    <div class="use-grid" style="margin-top:3rem"><div class="use-card fade"><div class="use-card-h">General Dental Practice</div><p class="use-card-p">Reduce reporting time and give patients clear, evidence-backed explanations of findings during the same appointment.</p></div>
+<div class="use-card fade"><div class="use-card-h">Oral &amp; Maxillofacial Surgery</div><p class="use-card-p">Surface complex pathologies — impactions, cysts, anatomical anomalies — with AI-assisted presurgical planning.</p></div>
+<div class="use-card fade"><div class="use-card-h">Dental Radiology Services</div><p class="use-card-p">Scale reading capacity without proportionally scaling headcount. Quality-checked AI reads every image.</p></div>
+<div class="use-card fade"><div class="use-card-h">Dental Education</div><p class="use-card-p">Structured AI-generated annotations help students develop clinical reasoning alongside experienced clinicians.</p></div></div>
+  </div>
+<section class="testi-section">
+  <div class="testi-inner">
+    <div class="prod-sec-label fade">04 — Client outcomes</div>
+    <div class="testi-grid">
+      <div class="testi-card fade">
+        <p class="testi-q">Our reporting time went from same-day to same-appointment. Dental PanoAI gives our dentists the report before the patient has left the chair. The detection accuracy on early periapical lesions has genuinely improved our diagnosis rates.</p>
+        <div class="testi-meta">
+          <div class="testi-name">Dr. Ahmed Bin Rashid</div>
+          <div class="testi-role">Head of Dental Radiology<br>SEHA Dental Network — Abu Dhabi</div>
+          <div class="testi-outcome">89%</div>
+          <div class="testi-outcome-l">Reduction in average report turnaround time</div>
+        </div>
+      </div>
+      <div class="testi-card fade d1">
+        <p class="testi-q">We rolled Dental PanoAI across 12 clinics simultaneously. The integration with our PMS took three days. Our radiographers now spend their time on complex cases — not typing reports for routine panoramics.</p>
+        <div class="testi-meta">
+          <div class="testi-name">Sara Al Mansoori</div>
+          <div class="testi-role">Director of Clinical Operations<br>Aster Dental Centres — Dubai &amp; Northern Emirates</div>
+          <div class="testi-outcome">12</div>
+          <div class="testi-outcome-l">Clinics live in 3-day rollout, zero workflow disruption</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="prod-sec-label fade">05 — Frequently asked</div>
+    <div class="faq-layout">
+      <div>
+        <h2 class="faq-intro-h fade">Common <em>questions.</em></h2>
+        <p class="faq-intro-p fade">Every implementation is different. These are the questions we hear most often — answered directly, without the sales wrapper.</p>
+        <div style="margin-top:2.5rem" class="fade d1">
+          <a href="contact.html" class="btn-ghost" style="display:inline-flex">Ask us anything →</a>
+        </div>
+      </div>
+      <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">Does Dental PanoAI replace the dentist's diagnostic judgment?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">No — and we are explicit about this. Dental PanoAI is a clinical decision support tool. It surfaces findings, provides confidence scores, and generates a structured report. The treating dentist reviews every finding before it becomes part of the clinical record. The AI provides a second read, not a final diagnosis.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">Which radiograph types and formats are supported?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">Dental PanoAI supports panoramic radiographs, periapical films, bitewing series, and CBCT volumes. Files can be uploaded via DICOM, JPEG, or PNG. CBCT analysis generates a 3D finding report with slice-level annotations. Integration with major PACS and dental practice management systems is available via API.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">How long does integration with our practice management system take?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">For systems with available APIs (Carestream, Dentsply Sirona, Planmeca, Apteryx, and others), integration is typically complete within 2–3 days. PrivaSure also offers a standalone web portal for practices that prefer to upload manually and receive reports via the web interface without a PMS integration.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">What is the detection accuracy for early-stage caries?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">In our clinical validation study across 14,000 radiographs, Dental PanoAI achieved 96.4% sensitivity and 94.1% specificity for interproximal caries detection at ICDAS score 2 and above. For periapical pathology, sensitivity was 97.8%. Full validation data and methodology are available in our clinical white paper upon request.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">Is patient data retained after analysis?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><p class="faq-a-text">No. By default, uploaded radiographs are processed in memory and deleted within 60 minutes of report generation. No images are retained on SynapseHealthTech servers beyond the session. Customers with self-hosted deployments retain full data sovereignty. We do not use customer data to train or update models without explicit written agreement.</p></div>
+    </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- CTA -->
+<section style="padding:8rem 5%;text-align:center;border-bottom:1px solid var(--ln)">
+  <div class="ct">
+    <div class="prod-sec-label fade" style="justify-content:center">Get started</div>
+    <h2 class="prod-sec-h2 fade" style="text-align:center;max-width:600px;margin:0 auto 2.5rem">Dental PanoAI — <em>ready when you are.</em></h2>
+    <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap" class="fade d1">
+      <a href="contact.html" class="btn-filled">Try Dental PanoAI →</a>
+      <a href="products.html" class="btn-ghost">View all products</a>
+    </div>
+  </div>
+</section>
+
+<style>
+@media(max-width:767px){
+  .prod-hero-inner{grid-template-columns:1fr!important;gap:2rem!important}
+  .prod-kpi-block{text-align:left!important}
+  .prod-sec2-inner{grid-template-columns:1fr!important;gap:3rem!important}
+  .use-grid{grid-template-columns:1fr!important}
+  .prod-hero{padding:8rem 5% 4rem}
+}
+</style>
+
+<footer>
+  <div class="ft-top">
+    <a href="index.html" class="logo"><img src="assets/Logo_Hi_Res.png" alt="SynapseHealthTech"></a>
+    <ul class="fl"><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="industries.html">Industries</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+    <div class="footer-social">
+      <a href="https://instagram.com/synapsehealthtech" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="https://linkedin.com/company/synapsehealthtech" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+      <a href="https://x.com/synapseHT" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.23zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span class="fc">© 2025 SynapseHealthTech · Abu Dhabi</span>
+    <a href="#" class="fc-link">Privacy Policy</a>
+  </div>
+</footer>
+<script>
+const dot=document.getElementById('dot');
+document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px'});
+document.querySelectorAll('a,.sr,.pr,.ind-item,.role-row,.cert').forEach(el=>{el.addEventListener('mouseenter',()=>document.body.classList.add('lh'));el.addEventListener('mouseleave',()=>document.body.classList.remove('lh'))});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('dim',scrollY>80),{passive:true});
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:0.1});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+// Hamburger
+const menuBtn=document.getElementById('menu-btn');
+if(menuBtn){menuBtn.addEventListener('click',()=>{const open=document.body.classList.toggle('menu-open');menuBtn.setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':''});document.querySelectorAll('.nl a').forEach(a=>{a.addEventListener('click',()=>{document.body.classList.remove('menu-open');document.body.style.overflow='';menuBtn.setAttribute('aria-expanded',false)})});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open')){document.body.classList.remove('menu-open');document.body.style.overflow='';menuBtn.setAttribute('aria-expanded',false)}});}
+if(window.matchMedia('(hover: none)').matches){const d=document.getElementById('dot');if(d)d.style.display='none';}
+
+// ── PRODUCTS DROPDOWN ──
+document.querySelectorAll('.nl-drop').forEach(function(d){
+  d.addEventListener('mouseenter',function(){d.classList.add('open')});
+  d.addEventListener('mouseleave',function(){d.classList.remove('open')});
+});
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+    if(!isOpen)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

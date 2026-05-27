@@ -1,0 +1,623 @@
+/* ============================================================
+   SYNAPSEHEATHTECH — SHARED STYLESHEET
+   synapse.css · v1.0.0
+   ============================================================
+   Table of Contents
+   00  Design Tokens (CSS Custom Properties)
+   01  Reset & Base
+   02  Cursor
+   03  Navigation
+   04  Typography Utilities
+   05  Layout Utilities
+   06  Section Label
+   07  Reveal Animations (.fade)
+   08  Text Link
+   09  Footer
+   10  Page Hero (inner pages)
+   11  Accordion (Services & Products)
+   12  Certifications / Tags
+   13  CTA Strip
+   ============================================================ */
+
+
+/* ── 00  DESIGN TOKENS ──────────────────────────────────────
+   Single source of truth. Override per-page if needed.
+──────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds — dark warm scale */
+  --bg:    #0F0E0B;   /* page background */
+  --bg2:   #161410;   /* alternate section background */
+  --bg3:   #1D1A14;   /* tertiary / quote sections */
+  --faint: #252219;   /* card / inset backgrounds */
+
+  /* Foreground */
+  --fg:    #EFEBE2;   /* primary text */
+  --sub:   #706960;   /* secondary / muted text */
+
+  /* Accent — Acid Lime */
+  --a:     #BEFC42;   /* primary accent: borders, hovers, highlights */
+  --a-dim: rgba(190, 252, 66, 0.10);  /* very faint accent fill */
+
+  /* Lines & Borders */
+  --ln:    rgba(239, 235, 226, 0.07);  /* default rule/border */
+  --lnh:   rgba(239, 235, 226, 0.14);  /* hover rule/border */
+
+  /* Typography — see 04 */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono:  'Chivo Mono', 'Courier New', monospace;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --sp-xs:  0.5rem;
+  --sp-sm:  1rem;
+  --sp-md:  2rem;
+  --sp-lg:  4rem;
+  --sp-xl:  7rem;
+
+  /* Layout */
+  --max-w:  1280px;
+  --pad-x:  5%;
+}
+
+
+/* ── 01  RESET & BASE ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  animation: pageIn 0.45s 0.1s ease forwards;
+}
+@keyframes pageIn { to { opacity: 1 } }
+
+img { display: block; max-width: 100%; }
+a  { text-decoration: none; }
+
+
+/* ── 02  CURSOR ─────────────────────────────────────────────── */
+#dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--a);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: exclusion;
+  transition: width 0.2s, height 0.2s;
+}
+body.lh #dot {
+  width: 30px;
+  height: 30px;
+}
+
+
+/* ── 03  NAVIGATION ─────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem var(--pad-x);
+  transition: background 0.4s;
+}
+nav.dim {
+  background: rgba(15, 14, 11, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.logo img {
+  height: 34px;
+  mix-blend-mode: screen; /* knocks out black logo background */
+}
+.nl {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+.nl a {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sub);
+  cursor: none;
+  transition: color 0.2s;
+}
+.nl a:hover,
+.nl a.act { color: var(--fg); }
+
+
+/* ── 04  TYPOGRAPHY UTILITIES ───────────────────────────────── */
+.t-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: 300;
+}
+.t-sans {
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+
+/* ── 05  LAYOUT UTILITIES ───────────────────────────────────── */
+.ct {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); }
+
+
+/* ── 06  SECTION LABEL (.sl) ────────────────────────────────── */
+.sl {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sl::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--a);
+  flex-shrink: 0;
+}
+.sl::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--ln);
+}
+
+
+/* ── 07  REVEAL ANIMATIONS ──────────────────────────────────── */
+/*
+   Usage: add class="fade" to any element.
+   Add .d1–.d4 for staggered delays.
+   JS IntersectionObserver adds .on when in view.
+*/
+.fade {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade.on { opacity: 1; transform: none; }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }
+
+
+/* ── 08  TEXT LINK (.tl) ────────────────────────────────────── */
+/* Used for hero CTA links and any mono uppercase link-arrow */
+.tl {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg);
+  cursor: none;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.tl:hover { color: var(--a); }
+.tl .ar { transition: transform 0.2s; }
+.tl:hover .ar { transform: translate(3px, -3px); }
+
+
+/* ── 09  FOOTER ─────────────────────────────────────────────── */
+footer {
+  padding: 2.5rem var(--pad-x);
+  border-top: 1px solid var(--ln);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.fl {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.fl a {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sub);
+  cursor: none;
+  transition: color 0.2s;
+}
+.fl a:hover { color: var(--fg); }
+.fc {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--sub);
+}
+
+
+/* ── 10  PAGE HERO (inner pages) ────────────────────────────── */
+.ph {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 var(--pad-x) 5rem;
+  border-bottom: 1px solid var(--ln);
+  position: relative;
+  overflow: hidden;
+}
+.ph-amb {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 55% 45% at 40% 70%, rgba(190, 252, 66, 0.028) 0%, transparent 70%);
+}
+.ph-pre {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ph-pre::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--a);
+}
+.ph-h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 3rem;
+}
+.ph-h1 em {
+  font-style: italic;
+  color: var(--a);
+}
+
+
+/* ── 11  ACCORDION ROWS ─────────────────────────────────────── */
+/* Services accordion */
+.sr {
+  border-top: 1px solid var(--ln);
+  cursor: none;
+}
+.sr:last-child { border-bottom: 1px solid var(--ln); }
+.st {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto;
+  align-items: center;
+  padding: 1.8rem 0;
+  user-select: none;
+}
+.sn {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--sub);
+  letter-spacing: 0.1em;
+}
+.sname {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.85rem);
+  font-weight: 400;
+  transition: color 0.25s;
+}
+.stog {
+  font-size: 1.1rem;
+  color: var(--sub);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s;
+  width: 2rem;
+  text-align: center;
+}
+.sr:hover .sname,
+.sr.open  .sname { color: var(--a); }
+.sr:hover .stog,
+.sr.open  .stog  { color: var(--a); }
+.sr.open  .stog  { transform: rotate(45deg); }
+.sb {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+}
+.sr.open .sb { max-height: 240px; padding-bottom: 2.5rem; }
+
+/* Products accordion */
+.pr {
+  border-top: 1px solid var(--ln);
+  cursor: none;
+  position: relative;
+}
+.pr::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--a);
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pr:hover::before,
+.pr.open::before { width: 100%; }
+.pr:last-child { border-bottom: 1px solid var(--ln); }
+.ph-row {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto auto;
+  align-items: center;
+  padding: 2rem 0;
+  user-select: none;
+}
+.ptit {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: color 0.25s;
+}
+.ptag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sub);
+  margin-right: 3rem;
+  transition: color 0.25s;
+}
+.parr {
+  font-size: 1.1rem;
+  color: var(--sub);
+  transition: color 0.25s, transform 0.4s;
+}
+.pr:hover .ptit,
+.pr.open  .ptit { color: var(--a); }
+.pr:hover .parr,
+.pr.open  .parr { color: var(--a); transform: rotate(90deg); }
+.pr:hover .ptag,
+.pr.open  .ptag { color: rgba(190, 252, 66, 0.55); }
+.pe {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+}
+.pr.open .pe { max-height: 340px; padding-bottom: 3rem; }
+
+
+/* ── 12  CERT / TAG PILLS ───────────────────────────────────── */
+.cert {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sub);
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--ln);
+  transition: border-color 0.25s, color 0.25s;
+}
+.cert:hover {
+  border-color: var(--lnh);
+  color: var(--fg);
+}
+
+
+/* ── 13  CTA STRIP ──────────────────────────────────────────── */
+.cta-strip {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem var(--pad-x);
+  border-top: 1px solid var(--ln);
+}
+.cta-strip h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.cta-strip h2 em {
+  font-style: italic;
+  color: var(--a);
+}
+.cta-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--a);
+  cursor: none;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(190, 252, 66, 0.3);
+  padding-bottom: 0.2rem;
+  transition: border-color 0.2s;
+}
+.cta-link:hover { border-color: var(--a); }
+
+/* ── FOOTER STRUCTURE ──────────────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--ln);
+  padding: 0 5%;
+}
+.ft-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--ln);
+  flex-wrap: wrap;
+}
+.ft-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  flex-wrap: wrap;
+}
+.fc {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sub);
+}
+.fc-link {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sub);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.fc-link:hover { color: var(--fg); }
+
+/* ── FOOTER SOCIAL ICONS ──────────────────────────────────────── */
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--sub);
+  border: 1px solid var(--ln);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: color 0.22s, border-color 0.22s, background 0.22s;
+  cursor: none;
+  flex-shrink: 0;
+}
+.footer-social a svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+.footer-social a:hover {
+  color: var(--a);
+  border-color: var(--a);
+  background: rgba(190, 252, 66, 0.06);
+}
+
+
+/* ── SHARED JS SNIPPET (copy into every page's <script>) ────────
+   Cursor tracking, nav dimming, IntersectionObserver for .fade:
+
+   const dot = document.getElementById('dot');
+   document.addEventListener('mousemove', e => {
+     dot.style.left = e.clientX + 'px';
+     dot.style.top  = e.clientY + 'px';
+   });
+   document.querySelectorAll('a, .sr, .pr, .cert, button, input, select, textarea')
+     .forEach(el => {
+       el.addEventListener('mouseenter', () => document.body.classList.add('lh'));
+       el.addEventListener('mouseleave', () => document.body.classList.remove('lh'));
+     });
+   const nav = document.getElementById('nav');
+   window.addEventListener('scroll', () =>
+     nav.classList.toggle('dim', scrollY > 80), { passive: true });
+   const io = new IntersectionObserver(entries =>
+     entries.forEach(e => {
+       if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+     }), { threshold: 0.1 });
+   document.querySelectorAll('.fade').forEach(el => io.observe(el));
+──────────────────────────────────────────────────────────────── */
+
+/* ── CTA BUTTONS ───────────────────────────────────────────────── */
+.btn-filled {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.75rem;
+  background: var(--a);
+  color: #0F0E0B;
+  font-family: 'Chivo Mono', monospace;
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--a);
+  cursor: none;
+  transition: background .2s, color .2s;
+  white-space: nowrap;
+}
+.btn-filled:hover { background: transparent; color: var(--a); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .75rem 1.75rem;
+  background: transparent;
+  color: var(--fg);
+  font-family: 'Chivo Mono', monospace;
+  font-size: .75rem;
+  font-weight: 400;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--ln);
+  cursor: none;
+  transition: border-color .2s, color .2s;
+  white-space: nowrap;
+}
+.btn-ghost:hover { border-color: var(--a); color: var(--a); }
