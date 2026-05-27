@@ -12,15 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: synapsehealthtech.com
+          host: 91.108.107.46
           username: u683493491
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            .github/**
+          port: 22
+          source: "."
+          target: /home/u683493491/domains/synapsehealthtech.com/public_html
+          strip_components: 1
+          rm: false
